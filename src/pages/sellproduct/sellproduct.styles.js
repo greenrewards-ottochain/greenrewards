@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { device } from "../../utils/device";
 
 export const SellParent = styled.div`
     width: 100vw;
@@ -16,6 +17,28 @@ export const SellWrapper = styled.div`
     flex-direction: column;
     justify-content: center;
     background:#fff;
+
+    @media ${device.laptopL} { 
+        max-width: 1400px;
+        }
+    
+     @media ${device.desktop} {
+        max-width: 2500px;
+        }
+     @media ${device.tablet} {
+          max-width: 768px;
+              }
+       @media ${device.mobileL} {
+                  max-width: 425px;
+                  }
+       @media ${device.mobileM} {
+               max-width: 375px;
+                      }
+       @media ${device.mobileS} {
+               max-width: 320px;
+                          }
+                                   
+        
 
     `;
 

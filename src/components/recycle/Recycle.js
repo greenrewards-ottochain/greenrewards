@@ -7,7 +7,7 @@ import {
     Header,
     MButton
 } from "./recycle.styles";
-import bottle from "../../assets/bottle.png";
+import plastic from "../../assets/plastic.png";
 import electronic from "../../assets/electronic.png";
 import cardboard from "../../assets/cardboard.png";
 import {Link} from "react-router-dom";
@@ -30,11 +30,11 @@ const Recycle = () => {
                 </Header>
                 <SummaryContainer>
                     <SummaryCard >
-                        <img src={bottle} alt="" />
+                        <img src={plastic} alt="" />
                         <h1>Plastic Bottles Collection</h1>
                         <p><b style={{marginRight:'8rem'}}>Quantity: </b> 1000 bottles
-                            <br></br><b style={{marginRight:'4rem'}}>Seller’s location: </b>Merton, London
-                            <br></br><b style={{marginRight:'10rem', color:'#015C28'}}>Price: </b><b style={{color:'#015C28'}}>0.02 USDT </b>
+                            <br></br><b style={{marginRight:'5rem'}}>Seller’s location: </b>Lagos, Nigeria
+                            <br></br><b style={{marginRight:'10rem', color:'#015C28'}}>Price: </b><b style={{color:'#015C28'}}>2 $OTTO </b>
                         </p>
                         <MButton>View details</MButton>
                     </SummaryCard>
@@ -42,8 +42,8 @@ const Recycle = () => {
                         <img src={electronic} alt="" />
                         <h1>Electronic Waste</h1>
                         <p><b style={{marginRight:'8rem'}}>Quantity:</b>50 kg
-                            <br></br><b style={{marginRight:'4rem'}}>Seller’s location</b> New York City, USA
-                            <br></br><b style={{marginRight:'10rem', color:'#015C28'}}>Price:</b> <b style={{color:'#015C28'}}>0.5 USDT</b>
+                            <br></br><b style={{marginRight:'5rem'}}>Seller’s location</b>  Lagos, Nigeria
+                            <br></br><b style={{marginRight:'10rem', color:'#015C28'}}>Price:</b> <b style={{color:'#015C28'}}>5 $OTTO</b>
                         </p>
                         <MButton>View details</MButton>
                     </SummaryCard>
@@ -51,8 +51,8 @@ const Recycle = () => {
                         <img src={cardboard} alt="" />
                         <h1>Cardboard Boxes Bundle</h1>
                         <p><b style={{marginRight:'8rem'}}>Quantity: </b>200 boxes
-                            <br></br><b style={{marginRight:'4rem'}}>Seller’s location</b> Toronto, Canada
-                            <br></br><b style={{marginRight:'10rem', color:'#015C28'}}>Price:</b><b style={{color:'#015C28'}}>0.03 USDT</b>
+                            <br></br><b style={{marginRight:'5rem'}}>Seller’s location</b> Abuja, Nigeria
+                            <br></br><b style={{marginRight:'10rem', color:'#015C28'}}>Price:</b><b style={{color:'#015C28'}}>3 $OTTO</b>
                         </p>
                         <MButton>View details</MButton>
                     </SummaryCard>

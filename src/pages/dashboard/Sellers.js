@@ -2,6 +2,7 @@ import React from "react";
 import Sidebar from "../../components/sidebar/Sidebar";
 import {
 
+    Button,
     SellerParent,
     SellerWrapper,
     TextContainer,
@@ -33,7 +34,10 @@ const Seller = () => {
                         <TextContainer><h1>GreenReward - Where environmental consciousness 
                             <br></br>meets blockchain innovation</h1>
                             <h2>Trade recyclables on the blockchain, earn rewards, and power the 
-                                <br></br>green revolution with every sale and purchase</h2></TextContainer>
+                                <br></br>green revolution with every sale and purchase</h2>
+                                <Button>Add new Products</Button>
+                                </TextContainer>
+                                
                     </UpperContainer>
 
 

@@ -10,6 +10,7 @@ import signupimage from "../../assets/signupimage.svg";
 import FormTextInput from "../../components/custom-input/FormTextInput";
 import arrow from "../../assets/arrow.png";
 import FormButton from "../../components/custom-button/FormButton";
+import { CloseButton} from '@chakra-ui/react';
 
 
 
@@ -26,6 +27,7 @@ const Signin = () => {
                 <Wrapper>
 
                     <form>
+                    <Link to='/'>  <CloseButton/></Link>
                         <FormHeader>
                             <h3>Welcome Back GreenHero</h3>
 
