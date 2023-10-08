@@ -167,6 +167,7 @@ export const ResourcesDiv = styled.div`
     `;
 export const SocialDiv = styled.div`
    display: flex;
+  
     
    & img {
     width: 1rem;

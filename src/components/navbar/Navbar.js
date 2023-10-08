@@ -26,7 +26,7 @@ const Navbar = () => {
                 </LogoContainer>
                 <BigLinkContainer>
                     <NavbarLink><Link to='/' style={{ textDecoration: 'none', color: '#0F160F' }} >Home</Link></NavbarLink>
-                    <NavbarLink> <Link to='/sustainable-milestones' style={{ textDecoration: 'none', color: '#0F160F' }}>Marketplace</Link></NavbarLink>
+                    <NavbarLink> <Link to='/market-place' style={{ textDecoration: 'none', color: '#0F160F' }}>Marketplace</Link></NavbarLink>
                     <NavbarLink><Link to='/about-us' style={{ textDecoration: 'none', color: '#0F160F' }}>About us </Link></NavbarLink>
                 </BigLinkContainer>
                 <ButtonWrapper><div class="dropdown">

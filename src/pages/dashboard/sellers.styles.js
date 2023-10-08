@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {device} from "../../utils/device";
 
 export const SellerParent = styled.div`
   display: flex;
@@ -8,9 +9,27 @@ export const SellerParent = styled.div`
 
 export const SellerWrapper = styled.div`
   flex: 1;
-  border: 1px solid #8E44AD;
   display: flex;
   flex-direction: column;
+  @media ${device.laptopL} { 
+    max-width: 1400px;
+    }
+
+@media ${device.desktop} {
+    max-width: 2500px;
+    }
+ @media ${device.tablet} {
+    max-width: 768px;
+        }
+ @media ${device.mobileL} {
+            max-width: 425px;
+            }
+ @media ${device.mobileM} {
+         max-width: 375px;
+                }
+ @media ${device.mobileS} {
+         max-width: 320px;
+                    }
 `;
 
 
@@ -31,7 +50,7 @@ export const TextContainer= styled.div`
        width: 80%;
        position: absolute;
        top: 30%;
-       left: 60%;
+       left: 50%;
        margin-left:10rem;
        transform: translate(-50%, -50%);
        color:#fff;
@@ -41,7 +60,7 @@ export const TextContainer= styled.div`
        & h1{
        font-weight:700;
        line-height:1.5rem;
-       font-size:1rem;
+       font-size:1.2rem;
        font-family: Sans-Serif;
        color:  #fff;
        
@@ -64,11 +83,11 @@ export const TextContainer= styled.div`
 
 export const Button = styled.button`
        display: flex;
-       background:#00B9E5;
+       background:#fff;
        width:8rem;
-       border: 1px solid #00B9E5; 
+       border: 1px solid #fff; 
        border-radius:5px;
-       color:#ffffff;
+       color:#427142;
        height: 2.5rem;
        align-items: center;
        justify-content: center;

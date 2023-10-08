@@ -43,9 +43,14 @@ export const SidebarParent = styled.aside`
 
 export const SidebarLogoContainer = styled.div`
   align-items: center;
-  padding: 0.5rem;
+  padding: 1rem;
   display:flex;
   flex-direction:row;
+  margin-top: 1rem;
+
+  & img{
+    width:10rem;
+  }
 
   `;
 
@@ -61,7 +66,7 @@ export const SidebarLogoContainer = styled.div`
   @media ${device.laptop} {
     text-decoration: none;
     display: flex;
-    width: 100%;
+    width: 90%;
     align-items: center;
     color: #000;
     padding: 0.2rem 0.2rem;
@@ -74,28 +79,29 @@ export const SidebarLogoContainer = styled.div`
     & h3 {
       font-family: "Inter";
       font-weight: 400;
-      font-size: 1.3rem;
-      line-height: 2rem;
+      font-size: 1rem;
+      line-height: 1rem;
       
     }
 
     &.active {
-      background: #CF9D3A;
+      background: #427142;
       color: #fff;
     }
 
     &.active span {
-      background: #CF9D3A;
+      background: #DBECDB;
       color: #fff;
     }
   }
 `;
 
 export const SidebarLinksContainer = styled.section`
-  display: flex;
+ display:flex;
   flex-direction: column;
   flex: 100%;
   margin-top: 0.7rem;
+ 
 `;
 
 export const LogoutArea = styled.div`

@@ -53,8 +53,8 @@ const Home = () => {
                                                 <h2>carbon reduction through recycling.</h2>
                                                 <h3> Trade recyclables on the blockchain, earn rewards, and power the green </h3>
                                                 <h4>revolution with every sale and purchase</h4>
-                                                <ButtonContainer><Link to='/sustainable-milestones' style={{ textDecoration: 'none', color: 'black' }}><GButton>Sell Products</GButton></Link>
-                                                        <Link to='/verification-board' style={{ textDecoration: 'none', color: 'white' }}><LButton>Buy Products</LButton></Link>
+                                                <ButtonContainer><Link to='/sell-product' style={{ textDecoration: 'none', color: 'black' }}><GButton>Sell Products</GButton></Link>
+                                                        <Link to='/market-place' style={{ textDecoration: 'none', color: 'white' }}><LButton>Buy Products</LButton></Link>
                                                 </ButtonContainer>
 
                                         </TextContainer>

@@ -11,6 +11,7 @@ import FormTextInput from "../../components/custom-input/FormTextInput";
 import arrow from "../../assets/arrow.png";
 import FormButton from "../../components/custom-button/FormButton";
 import Checkbox from "../../components/checkbox/Checkbox";
+import { CloseButton} from '@chakra-ui/react';
 
 
 
@@ -33,6 +34,7 @@ const Signup = () => {
                 <Wrapper>
 
                     <form>
+                    <Link to='/'>  <CloseButton/></Link>
                         <FormHeader>
                             <h3>CREATE YOUR ACCOUNT</h3>
 
