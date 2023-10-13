@@ -17,6 +17,7 @@ import aluminium from "../../assets/aluminium.png";
 import bottle from "../../assets/bottle.png";
 import paper from "../../assets/paper.png";
 import Subfooter from "../../components/subfooter/Subfooter";
+import {Link} from "react-router-dom";
 
 
 const Marketplace = () => {
@@ -36,7 +37,7 @@ const Marketplace = () => {
                             <br></br><b style={{ marginRight: '5rem' }}>Seller’s location: </b>Lagos, Nigeria
                             <br></br><b style={{ marginRight: '10rem', color: '#015C28' }}>Price: </b><span style={{ color: '#015C28' }}>2 $OTTO </span>
                         </p>
-                        <MButton>View details</MButton>
+                      <Link to='/product-details' style={{ textDecoration: 'none', color: '#427142' }}> <MButton>View details</MButton></Link> 
                     </SummaryCard>
                     <SummaryCard>
                         <img src={electronic} alt="" />

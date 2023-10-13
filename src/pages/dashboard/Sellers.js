@@ -3,6 +3,7 @@ import Sidebar from "../../components/sidebar/Sidebar";
 import {
 
     Button,
+    LowerContainer,
     SellerParent,
     SellerWrapper,
     TextContainer,
@@ -11,6 +12,7 @@ import {
 } from "./sellers.styles";
 import { sideBarLinks } from "./sellers.routes";
 import upperimage from "../../assets/upperimage.png";
+
 
 
 
@@ -39,11 +41,14 @@ const Seller = () => {
                                 </TextContainer>
                                 
                     </UpperContainer>
-
-
-
-
+                    <LowerContainer>
+                   </LowerContainer>
                 </div>
+
+
+
+
+               
             </SellerWrapper>
         </SellerParent >
     );

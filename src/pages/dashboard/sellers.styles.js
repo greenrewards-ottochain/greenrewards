@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {device} from "../../utils/device";
+
 
 export const SellerParent = styled.div`
   display: flex;
@@ -11,31 +11,13 @@ export const SellerWrapper = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
-  @media ${device.laptopL} { 
-    max-width: 1400px;
-    }
-
-@media ${device.desktop} {
-    max-width: 2500px;
-    }
- @media ${device.tablet} {
-    max-width: 768px;
-        }
- @media ${device.mobileL} {
-            max-width: 425px;
-            }
- @media ${device.mobileM} {
-         max-width: 375px;
-                }
- @media ${device.mobileS} {
-         max-width: 320px;
-                    }
+  
 `;
 
 
 
 export const UpperContainer = styled.section`
-  width: 60%;
+  width: 80%;
   height: 40vh;
   display: flex;
   border-radius: 12px;
@@ -95,3 +77,15 @@ export const Button = styled.button`
        
        
        `;
+
+       export const LowerContainer = styled.section`
+       width: 60%;
+       height: 40vh;
+       display: flex;
+       border-radius: 12px;
+       margin-top: 3rem;
+       margin-left:1rem;
+     
+      
+       
+     `;   
