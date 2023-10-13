@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const FooterParent = styled.div`
-    width: 100vw;
+    width: 120vw;
     height: 50vh;
     display: flex;
     background:#2A382A;
@@ -10,7 +10,7 @@ export const FooterParent = styled.div`
 `;
 
 export const CenterWrapper = styled.div`
-    width: 100vw;
+    width: 120vw;
     height: 100vh;
     display: flex;
     background:#2A382A;

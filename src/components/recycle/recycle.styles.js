@@ -79,7 +79,7 @@ export const SummaryCard = styled.div`
       }
     
       & h1 {
-        font-weight: 700;
+        font-weight: 500;
         font-size: 1.1rem;
         color:  #0F160F;
         margin-left:1rem;
@@ -91,6 +91,10 @@ export const SummaryCard = styled.div`
         font-size: 1rem;
         color:  #0F160F;
         margin-left:1rem;
+      }
+
+      & b{
+        font-weight:500;
       }
 
       

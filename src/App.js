@@ -6,7 +6,7 @@ import Verify from "./pages/verify/Verify";
 import SellProduct from "./pages/sellproduct/Sellproduct";
 import Seller from "./pages/dashboard/Sellers";
 import Marketplace from "./pages/marketplace/Marketplace";
-
+import Productdetail from "./pages/marketplace/Productdetail"
 
 
 
@@ -28,6 +28,7 @@ function App() {
             <Route path="/sell-product" element={<SellProduct/>}/>
             <Route path="/dashboard" element={<Seller/>} />
             <Route path='/market-place' element={<Marketplace/>} />
+            <Route path="/product-details" element={<Productdetail/>}/>
             
 
 

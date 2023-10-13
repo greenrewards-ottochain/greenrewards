@@ -3,7 +3,7 @@ import { device } from "../../utils/device";
 
 
 export const HomeParent = styled.div`
-    width: 100vw;
+    width: 120vw;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -11,7 +11,7 @@ export const HomeParent = styled.div`
 `;
 
 export const HomeWrapper = styled.div`
-     width: 100vw;
+     width: 120vw;
      height: 150vh;
      display: flex;
      flex-direction: column;
@@ -50,14 +50,38 @@ export const BarWrapper = styled.div`
       margin-top:2rem;
       margin-left:2rem;
       margin-bottom:3rem;
+
+      @media ${device.laptopL} { 
+         max-width: 1400px;
+         }
+     
+      @media ${device.desktop} {
+         max-width: 2500px;
+         }
+      @media ${device.tablet} {
+           max-width: 768px;
+               }
+        @media ${device.mobileL} {
+                   max-width: 425px;
+                   }
+        @media ${device.mobileM} {
+                max-width: 375px;
+                       }
+        @media ${device.mobileS} {
+                max-width: 320px;
+                           }
+                                 
       `;
 
 export const CentreWrapper = styled.div`
-     width: 100vw;
+     width: 120vw;
      height: 170vh;
      display: flex;
      flex-direction: column;
      background:#DBE1D4;
+
+     
+                              
  
    
       `;
@@ -65,10 +89,10 @@ export const CentreWrapper = styled.div`
 
 
 export const TextContainer = styled.div`
-width: 100vw;
+width: 120vw;
 position: absolute;
 top: 55%;
-left: 35%;
+left: 45%;
 margin-left:30rem;
 transform: translate(-50%, -50%);
 color:#fff;

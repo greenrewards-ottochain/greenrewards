@@ -26,11 +26,13 @@ export const LogoContainer = styled.div`
     display: flex;
     align-items: center;
     
+    
   
 
     & img {
     width: 15rem;
     margin-top:3rem;
+    margin-left:1rem;
     }
 
     
@@ -39,7 +41,7 @@ export const LogoContainer = styled.div`
  
 export const BigLinkContainer = styled.div`
     display: flex;
-    margin-left: 7rem;
+    margin-left: 6rem;
     
 `;
 
@@ -65,7 +67,7 @@ export const NavbarLink = styled(Link)`
 
 export const ButtonWrapper = styled.div`
 display:flex;
-margin-left:15rem;
+margin-left:17rem;
 margin-top: 3.5rem;
 
 
