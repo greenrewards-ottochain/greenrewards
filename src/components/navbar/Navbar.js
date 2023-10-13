@@ -6,11 +6,12 @@ import {
     BigLinkContainer,
     NavbarLink,
     ButtonWrapper, 
-    Button
+    
 } from "./navbar.styles";
 import logo from "../../assets/logo.png";
 import { Link } from "react-router-dom";
 import user from "../../assets/user.png";
+import { ConnectButton } from '@rainbow-me/rainbowkit';
 
 
 
@@ -41,7 +42,7 @@ const Navbar = () => {
                         <Link to='/dashboard' style={{ textDecoration: 'none', color: '#0F160F' }}>Dashboard</Link>
                     </div>
                 </div>
-                  <Button>Connect Wallet</Button>
+                  <ConnectButton/>
                     </ButtonWrapper>
 
 
