@@ -7,7 +7,7 @@ import transaction from "../../assets/transaction.png";
 
 export const sideBarLinks = [
   {
-    path: "/seller/",
+    path: "/",
     icon: <img src={home} alt=''/>,
     text: "Home",
     alt: "home",
@@ -25,7 +25,7 @@ export const sideBarLinks = [
     alt: "add",
   },
   {
-    path: "/seller/marketplace",
+    path: "/market-place",
     icon: <img src={marketplace} alt=''/>,
     text: "Marketplace",
     alt: "marketplace",
