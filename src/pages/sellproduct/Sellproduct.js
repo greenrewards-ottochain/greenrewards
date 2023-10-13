@@ -11,6 +11,8 @@ import FormTextInput from "../../components/custom-input/FormTextInput";
 import arrow from "../../assets/arrow.png";
 import FormButton from "../../components/custom-button/FormButton";
 import Checkbox from "../../components/checkbox/Checkbox";
+import { VscArrowLeft } from "react-icons/vsc";
+import { Link } from "react-router-dom";
 
 
 
@@ -31,9 +33,10 @@ const SellProduct = () => {
         <SellParent>
             <SellWrapper>
                 <Wrapper>
-
+                <Link to='/' style={{marginTop:'1rem'}}><VscArrowLeft/></Link>
                     <form>
                         <FormHeader>
+                           
                             <h3>Add a product</h3>
                             <img src={arrow} alt="arrow" marginLeft="2rem" />
                         </FormHeader>
@@ -64,7 +67,7 @@ const SellProduct = () => {
                         />
                         <FormTextInput
                             labelName="Price of the recyclable material (Price per unit of measure)"
-                            placeholder="E.g 1 plastic bottle cost 2 USDT"
+                            placeholder="E.g 1 plastic bottle cost  2 $OTTO"
                             name="cost"
 
                         />
@@ -76,27 +79,13 @@ const SellProduct = () => {
                             name="location"
 
                         />
-                        
 
-                        <FormTextInput
-                            labelName="Cost of delivery within your location"
-                            placeholder="Specify the cost of delivery within your location"
-                            name="cost"
 
-                        />
-                        <FormTextInput
-                            labelName="Cost of delivery within outside  location"
-                            placeholder="Specify the cost of delivery outside your location"
-                            name="cost"
+                       
 
-                        />
-
-                        <input
-                            id="image"
-                            type="file"
-                            name="Add a picture of the recyclable material "
-                            
-                        />
+                        <fieldset style={{borderRadius:'5px',marginTop:'1rem', width:'75%'}}>
+                            <input type="file" name="picture" id="picture" label='Add a picture of the recyclable material'  />
+                        </fieldset>
                         <br></br>
 
                         <Checkbox
@@ -120,7 +109,7 @@ const SellProduct = () => {
 
                         />
 
-                      
+
 
                     </form>
                     <div style={{ height: '40rem', width: '45rem', marginRight: '2rem' }}><img src={sideimage} alt='sideimage' /></div>

@@ -34,7 +34,7 @@ const Recycle = () => {
                         <h1>Plastic Bottles Collection</h1>
                         <p><b style={{marginRight:'8rem'}}>Quantity: </b> 1000 bottles
                             <br></br><b style={{marginRight:'5rem'}}>Seller’s location: </b>Lagos, Nigeria
-                            <br></br><b style={{marginRight:'10rem', color:'#015C28'}}>Price: </b><b style={{color:'#015C28'}}>2 $OTTO </b>
+                            <br></br><b style={{marginRight:'10rem', color:'#015C28'}}>Price: </b><span style={{color:'#015C28'}}>2 $OTTO </span>
                         </p>
                         <MButton>View details</MButton>
                     </SummaryCard>
@@ -43,7 +43,7 @@ const Recycle = () => {
                         <h1>Electronic Waste</h1>
                         <p><b style={{marginRight:'8rem'}}>Quantity:</b>50 kg
                             <br></br><b style={{marginRight:'5rem'}}>Seller’s location</b>  Lagos, Nigeria
-                            <br></br><b style={{marginRight:'10rem', color:'#015C28'}}>Price:</b> <b style={{color:'#015C28'}}>5 $OTTO</b>
+                            <br></br><b style={{marginRight:'10rem', color:'#015C28'}}>Price:</b> <span style={{color:'#015C28'}}>5 $OTTO</span>
                         </p>
                         <MButton>View details</MButton>
                     </SummaryCard>
@@ -52,7 +52,7 @@ const Recycle = () => {
                         <h1>Cardboard Boxes Bundle</h1>
                         <p><b style={{marginRight:'8rem'}}>Quantity: </b>200 boxes
                             <br></br><b style={{marginRight:'5rem'}}>Seller’s location</b> Abuja, Nigeria
-                            <br></br><b style={{marginRight:'10rem', color:'#015C28'}}>Price:</b><b style={{color:'#015C28'}}>3 $OTTO</b>
+                            <br></br><b style={{marginRight:'10rem', color:'#015C28'}}>Price:</b><span style={{color:'#015C28'}}>3 $OTTO</span>
                         </p>
                         <MButton>View details</MButton>
                     </SummaryCard>

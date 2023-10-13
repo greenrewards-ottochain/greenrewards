@@ -18,6 +18,8 @@ export const SellWrapper = styled.div`
     justify-content: center;
     background:#fff;
 
+  
+
     @media ${device.laptopL} { 
         max-width: 1400px;
         }
@@ -99,7 +101,8 @@ export const SellWrapper = styled.div`
     margin-top:5rem;
     
     & img {
-        margin-left:2rem;
+        margin-left:3rem;
+        margin-bottom:1rem;
     }
 
     

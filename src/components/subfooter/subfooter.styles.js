@@ -2,14 +2,14 @@ import styled from "styled-components";
 
 export const SubfooterParent = styled.div`
     width: 120vw;
-    height: 30vh;
+    height: 35vh;
     background:#2A382A;
 
     
 `;
 
 export const SubcenterWrapper = styled.div`
-    width: 100vw;
+    width: 120vw;
     height: 30vh;
     background:#2A382A;
    
