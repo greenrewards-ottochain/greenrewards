@@ -6,7 +6,39 @@ import Verify from "./pages/verify/Verify";
 import SellProduct from "./pages/sellproduct/Sellproduct";
 import Seller from "./pages/dashboard/Sellers";
 import Marketplace from "./pages/marketplace/Marketplace";
-import Productdetail from "./pages/marketplace/Productdetail"
+import Productdetail from "./pages/marketplace/Productdetail";
+import '@rainbow-me/rainbowkit/styles.css';
+import { darkTheme, getDefaultWallets, RainbowKitProvider } from '@rainbow-me/rainbowkit';
+import { configureChains, createConfig, WagmiConfig } from 'wagmi';
+import { polygon } from 'wagmi/chains';
+import { publicProvider } from 'wagmi/providers/public';
+
+const { chains, publicClient, webSocketPublicClient } = configureChains(
+  [
+    // mainnet,
+    polygon,
+    //polygonMumbai,
+    // optimism,
+    // arbitrum,
+    // goerli,
+    // ...(process.env.NEXT_PUBLIC_ENABLE_TESTNETS === 'true' ? [goerli] : []),
+  ],
+  [publicProvider()]
+);
+
+const { connectors } = getDefaultWallets({
+  appName: 'RainbowKit App',
+  projectId: 'YOUR_PROJECT_ID',
+  chains,
+});
+
+const wagmiConfig = createConfig({
+  autoConnect: true,
+  connectors,
+  publicClient,
+  webSocketPublicClient,
+});
+
 
 
 
@@ -14,6 +46,11 @@ import Productdetail from "./pages/marketplace/Productdetail"
 
 function App() {
   return (
+    <WagmiConfig config={wagmiConfig}>
+    <RainbowKitProvider chains={chains}
+    theme={darkTheme({
+      accentColor: 'rgb(66,113,66)'
+    })}>
     
     
 
@@ -34,6 +71,8 @@ function App() {
 
           </Routes>
         </BrowserRouter>
+        </RainbowKitProvider>
+    </WagmiConfig> 
 
        
 
