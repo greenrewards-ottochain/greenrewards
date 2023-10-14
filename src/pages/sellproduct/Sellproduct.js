@@ -13,8 +13,7 @@ import FormButton from "../../components/custom-button/FormButton";
 import Checkbox from "../../components/checkbox/Checkbox";
 import { VscArrowLeft } from "react-icons/vsc";
 import { Link } from "react-router-dom";
-import { useContractWrite, usePrepareContractWrite } from 'wagmi';
-import greenRewardABI from "../../contract/greenRewardABI.json";
+
 
 
 
@@ -27,14 +26,7 @@ const SellProduct = () => {
     const onChange = () => {
         setChecked(!checked);
     };
-    const { config } = usePrepareContractWrite({
-        address: '0x25d3195984A693886103312eA3FA53D738c951B7',
-        abi:greenRewardABI,
-        functionName: 'ProductListed',
-      })
-
-    const { write } = useContractWrite(config)
-   
+    
 
 
 
@@ -108,7 +100,7 @@ const SellProduct = () => {
                             text="Proceed to Confirm"
                             color="#fff"
                             borderColor="#2B452B"
-                            disabled={!write} onClick={() => write?.()}
+                            
 
                         />
                         <FormButton
