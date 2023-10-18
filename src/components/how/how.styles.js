@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export const HowParent = styled.div`
     width: 100vw;
-    height: 200vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     background:#fff;
@@ -20,6 +20,7 @@ export const Header = styled.div`
     align-content: center;
     margin-left:12rem;
     margin-top:3rem;
+    margin-bottom:3rem;
 
     & h2 {
         color: #427142;
@@ -59,6 +60,10 @@ export const SummaryContainer1 = styled.div`
       gap: 0.5rem;
       align-items: center;
       margin-top:7rem;
+      
+      & img {
+        margin-bottom:10rem;
+      }
       
       
     `;

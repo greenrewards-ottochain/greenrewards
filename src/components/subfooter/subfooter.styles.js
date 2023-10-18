@@ -1,15 +1,15 @@
 import styled from "styled-components";
 
 export const SubfooterParent = styled.div`
-    width: 120vw;
-    height: 35vh;
+    width: 100vw;
+    height: 30vh;
     background:#2A382A;
 
     
 `;
 
 export const SubcenterWrapper = styled.div`
-    width: 120vw;
+    width: 100vw;
     height: 30vh;
     background:#2A382A;
    

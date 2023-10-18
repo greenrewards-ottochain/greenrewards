@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const FooterParent = styled.div`
-    width: 120vw;
-    height: 50vh;
+    width: 100vw;
+    height: 30vh;
     display: flex;
     background:#2A382A;
 
@@ -10,8 +10,8 @@ export const FooterParent = styled.div`
 `;
 
 export const CenterWrapper = styled.div`
-    width: 120vw;
-    height: 100vh;
+    width: 100vw;
+    height: 30vh;
     display: flex;
     background:#2A382A;
    
@@ -75,7 +75,7 @@ margin-left: 1rem;
 export const SearchBarContainer = styled.div`
   display: flex;
   width:  40%;
-  height: 15%;
+  height: 50%;
   margin-left: 3rem;
   
 `;
