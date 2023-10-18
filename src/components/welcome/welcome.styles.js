@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export const WelcomeParent = styled.div`
     width: 100vw;
-    height: 30vh;
+    height: 55vh;
     display: flex;
     flex-direction: column;
     background:#fff;
@@ -12,7 +12,7 @@ export const WelcomeParent = styled.div`
 
 export const WelcomeWrapper = styled.div`
      width: 100vw;
-     height: 30vh;
+     height: 55vh;
      display: flex;
      flex-direction: column;
      background:#fff;
@@ -27,7 +27,7 @@ export const SummaryContainer = styled.section`
       gap: 1.5rem;
       justify-content: space-around;
       align-items: center;
-      margin-top:10rem;
+      
     `;
     
 export const Header = styled.div`

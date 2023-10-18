@@ -99,7 +99,9 @@ export const SignupWrapper = styled.div`
     font-size:1.2rem;
     margin-top:5rem;
     
-
+& img{
+    margin-top:1rem;
+}
     
     `;
 

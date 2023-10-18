@@ -6,7 +6,7 @@ export const NavigateButton = styled.button`
     props.backgroundColor ? props.backgroundColor : "#427142"};
   border-radius: 4px;
   padding: 12px 30px;
-  width: ${(props) => (props.width ? props.width : "25.5rem")};
+  width: ${(props) => (props.width ? props.width : "30rem")};
   height: 2.8rem;
   color: ${(props) => (props.color ? props.color : "#fff")};
   font-weight: 500;
