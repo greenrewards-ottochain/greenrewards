@@ -95,6 +95,11 @@ export const FormHeader = styled.div`
     color:#0F160F;
     font-size:1.2rem;
     margin-top:4rem;
+
+
+    & img {
+        margin-top:1rem;
+    }
    
     `;
 
