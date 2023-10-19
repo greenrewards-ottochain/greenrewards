@@ -28,7 +28,7 @@ export const VerifyWrapper = styled.div`
      @media ${device.tablet} {
           max-width: 768px;
               }
-       @media ${device.mobileL} {
+    @media ${device.mobileL} {
                   max-width: 425px;
                   }
        @media ${device.mobileM} {
@@ -97,6 +97,7 @@ export const FormHeader = styled.div`
     
 & img {
     margin-left:1rem;
+    margin-top:1rem;
 }
    
     `;
