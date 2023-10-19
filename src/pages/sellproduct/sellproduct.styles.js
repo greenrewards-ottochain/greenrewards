@@ -103,6 +103,7 @@ export const SellWrapper = styled.div`
     & img {
         margin-left:3rem;
         margin-bottom:1rem;
+        margin-top:1rem;
     }
 
     
@@ -110,7 +111,7 @@ export const SellWrapper = styled.div`
 
 
     export const Select = styled.select`
-    width: 81%;
+    width: 75%;
     height:10%;
     background: #fff;
     color: #0F160F;

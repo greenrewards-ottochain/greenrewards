@@ -13,7 +13,8 @@ import FormButton from "../../components/custom-button/FormButton";
 import Checkbox from "../../components/checkbox/Checkbox";
 import { VscArrowLeft } from "react-icons/vsc";
 import { Link } from "react-router-dom";
-
+import { useContractWrite, usePrepareContractWrite } from 'wagmi';
+import greenRewardABI from "../../contract/greenRewardABI.json";
 
 
 
@@ -26,7 +27,12 @@ const SellProduct = () => {
     const onChange = () => {
         setChecked(!checked);
     };
-    
+    const { config } = usePrepareContractWrite({
+        address: '0x25d3195984A693886103312eA3FA53D738c951B7',
+        abi: greenRewardABI,
+        functionName: 'buyProduct',
+    })
+    const { data, isLoading, isSuccess, write } = useContractWrite(config)
 
 
 
@@ -34,10 +40,10 @@ const SellProduct = () => {
         <SellParent>
             <SellWrapper>
                 <Wrapper>
-                <Link to='/' style={{marginTop:'1rem'}}><VscArrowLeft/></Link>
+                    <Link to='/' style={{ marginTop: '1rem' }}><VscArrowLeft /></Link>
                     <form>
                         <FormHeader>
-                           
+
                             <h3>Add a product</h3>
                             <img src={arrow} alt="arrow" marginLeft="2rem" />
                         </FormHeader>
@@ -82,10 +88,10 @@ const SellProduct = () => {
                         />
 
 
-                       
 
-                        <fieldset style={{borderRadius:'5px',marginTop:'1rem', width:'75%'}}>
-                            <input type="file" name="picture" id="picture" label='Add a picture of the recyclable material'  />
+
+                        <fieldset style={{ borderRadius: '5px', marginTop: '1rem', width: '75%' }}>
+                            <input type="file" name="picture" id="picture" label='Add a picture of the recyclable material' />
                         </fieldset>
                         <br></br>
 
@@ -100,9 +106,11 @@ const SellProduct = () => {
                             text="Proceed to Confirm"
                             color="#fff"
                             borderColor="#2B452B"
-                            
+                            disabled={!write} onClick={() => write?.()}       
 
                         />
+                        {isLoading && <div>Check Wallet</div>}
+                        {isSuccess && <div>Transaction: {JSON.stringify(data)}</div>}
                         <FormButton
                             text="Cancel"
                             color="#2B452B"
