@@ -17,7 +17,7 @@ export const SellerWrapper = styled.div`
 
 
 export const UpperContainer = styled.section`
-  width: 80%;
+  width: 95%;
   height: 40vh;
   display: flex;
   border-radius: 12px;
@@ -32,7 +32,7 @@ export const TextContainer= styled.div`
        width: 80%;
        position: absolute;
        top: 30%;
-       left: 50%;
+       left: 55%;
        margin-left:10rem;
        transform: translate(-50%, -50%);
        color:#fff;
@@ -66,20 +66,20 @@ export const TextContainer= styled.div`
 export const Button = styled.button`
        display: flex;
        background:#fff;
-       width:8rem;
+       width:10rem;
        border: 1px solid #fff; 
        border-radius:5px;
        color:#427142;
        height: 2.5rem;
        align-items: center;
        justify-content: center;
-       
+       margin-top:1rem;
        
        
        `;
 
-       export const LowerContainer = styled.section`
-       width: 60%;
+export const LowerContainer = styled.section`
+       width: 90%;
        height: 40vh;
        display: flex;
        border-radius: 12px;

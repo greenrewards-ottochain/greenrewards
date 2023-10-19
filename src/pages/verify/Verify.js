@@ -48,7 +48,7 @@ const Verify = () => {
 
                     </form>
 
-                    <div style={{ height: '50rem', width: '45rem', marginRight: "2rem" }}><img src={signupimage} alt="signupimage" /></div>
+                    <div style={{ height: '50rem', width: '50rem', marginRight: "2rem" }}><img src={signupimage} alt="signupimage" /></div>
                 </Wrapper>
 
             </VerifyWrapper>
