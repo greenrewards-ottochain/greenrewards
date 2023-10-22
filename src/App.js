@@ -7,6 +7,7 @@ import SellProduct from "./pages/sellproduct/Sellproduct";
 import Seller from "./pages/dashboard/Sellers";
 import Marketplace from "./pages/marketplace/Marketplace";
 import Productdetail from "./pages/marketplace/Productdetail";
+import Connect from "./pages/connect/Connect";
 import '@rainbow-me/rainbowkit/styles.css';
 import { darkTheme, getDefaultWallets, RainbowKitProvider } from '@rainbow-me/rainbowkit';
 import { configureChains, createConfig, WagmiConfig } from 'wagmi';
@@ -61,6 +62,7 @@ function App() {
             <Route path="/dashboard" element={<Seller/>} />
             <Route path='/market-place' element={<Marketplace/>} />
             <Route path="/product-details" element={<Productdetail/>}/>
+            <Route path='/connect' element={<Connect/>}/>
             
 
 

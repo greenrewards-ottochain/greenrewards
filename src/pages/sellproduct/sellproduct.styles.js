@@ -98,7 +98,7 @@ export const SellWrapper = styled.div`
     align-content: center;
     color:#0F160F;
     font-size:1.2rem;
-    margin-top:5rem;
+    margin-top:2rem;
     
     & img {
         margin-left:3rem;

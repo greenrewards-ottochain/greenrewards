@@ -30,7 +30,7 @@ const SellProduct = () => {
     const { config } = usePrepareContractWrite({
         address: '0x25d3195984A693886103312eA3FA53D738c951B7',
         abi: greenRewardABI,
-        functionName: 'buyProduct',
+        functionName: 'listProduct',
     })
     const { data, isLoading, isSuccess, write } = useContractWrite(config)
 
@@ -82,7 +82,7 @@ const SellProduct = () => {
 
                         <FormTextInput
                             labelName="Location"
-                            placeholder="Enter your location"
+                            placeholder="E.g Lagos"
                             name="location"
 
                         />
@@ -90,10 +90,9 @@ const SellProduct = () => {
 
 
 
-                        <fieldset style={{ borderRadius: '5px', marginTop: '1rem', width: '75%' }}>
-                            <input type="file" name="picture" id="picture" label='Add a picture of the recyclable material' />
-                        </fieldset>
-                        <br></br>
+<label class="text-sm font-medium text-black block mb-2" for="user_avatar">Add a picture of the recyclable material </label>
+<input class="block w-3/4 cursor-pointer bg-white border-black border-solid border-2  text-black focus:outline-none focus:border-black  text-sm rounded-lg" aria-describedby="file_upload" id="file_upload" type="file"/>
+<div class="mt-1 text-sm text-black" id="file">Drag and drop or Select file from computer</div>
 
                         <Checkbox
                             id="checkbox"
@@ -122,7 +121,7 @@ const SellProduct = () => {
 
 
                     </form>
-                    <div style={{ height: '40rem', width: '45rem', marginRight: '2rem' }}><img src={sideimage} alt='sideimage' /></div>
+                    <div style={{ height: '50rem', width: '45rem', marginRight: '2rem' }}><img src={sideimage} alt='sideimage' /></div>
 
                 </Wrapper>
             </SellWrapper>
