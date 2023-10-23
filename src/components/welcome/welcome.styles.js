@@ -39,6 +39,7 @@ export const Header = styled.div`
     justify-content:left;
     align-content: left;
     margin-left:3rem;
+    margin-bottom:1rem;
 
     & h2 {
         color: #427142;

@@ -1,13 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Signup from "./pages/sign-up/Signup";
-import Signin from "./pages/sign-in/Signin";
-import Home from "./pages/home/Home";
-import Verify from "./pages/verify/Verify";
-import SellProduct from "./pages/sellproduct/Sellproduct";
-import Seller from "./pages/dashboard/Sellers";
-import Marketplace from "./pages/marketplace/Marketplace";
-import Productdetail from "./pages/marketplace/Productdetail";
-import Connect from "./pages/connect/Connect";
+import AllRoutes from './config/AllRoutes';
 import '@rainbow-me/rainbowkit/styles.css';
 import { darkTheme, getDefaultWallets, RainbowKitProvider } from '@rainbow-me/rainbowkit';
 import { configureChains, createConfig, WagmiConfig } from 'wagmi';
@@ -44,37 +35,22 @@ const wagmiConfig = createConfig({
 
 function App() {
   return (
-    
-<WagmiConfig config={wagmiConfig}>
-    <RainbowKitProvider chains={chains}
-    theme={darkTheme({
-      accentColor: 'rgb(66,113,66)'
-    })}>
 
-        <BrowserRouter>
-          <Routes>
+    <WagmiConfig config={wagmiConfig}>
+      <RainbowKitProvider chains={chains}
+        theme={darkTheme({
+          accentColor: 'rgb(66,113,66)'
+        })}>
+        <div>
+          <AllRoutes />
+        </div>
 
-            <Route path='/' element={<Home />} />
-            <Route path="/sign-up" element={<Signup />} />
-            <Route path="/sign-in" element={<Signin />} />
-            <Route path="/verify-account" element={<Verify/>}/>
-            <Route path="/sell-product" element={<SellProduct/>}/>
-            <Route path="/dashboard" element={<Seller/>} />
-            <Route path='/market-place' element={<Marketplace/>} />
-            <Route path="/product-details" element={<Productdetail/>}/>
-            <Route path='/connect' element={<Connect/>}/>
-            
-
-
-          </Routes>
-        </BrowserRouter>
-        
-        </RainbowKitProvider>
+      </RainbowKitProvider>
     </WagmiConfig>
 
-        
 
-     
+
+
   );
 }
 
