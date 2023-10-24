@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { device } from "../../utils/device";
+import { devices } from "../../utils/device";
 
 
 export const HomeParent = styled.div`
@@ -8,6 +8,7 @@ export const HomeParent = styled.div`
     display: flex;
     flex-direction: column;
     background:#DBE1D4;
+
 `;
 
 export const HomeWrapper = styled.div`
@@ -17,25 +18,7 @@ export const HomeWrapper = styled.div`
      flex-direction: column;
      background:#DBE1D4;
 
- @media ${device.laptopL} { 
-    max-width: 1400px;
-    }
-
- @media ${device.desktop} {
-    max-width: 2500px;
-    }
- @media ${device.tablet} {
-      max-width: 768px;
-          }
-   @media ${device.mobileL} {
-              max-width: 425px;
-              }
-   @media ${device.mobileM} {
-           max-width: 375px;
-                  }
-   @media ${device.mobileS} {
-           max-width: 320px;
-                      }
+ 
                                
     
 `;
@@ -51,36 +34,23 @@ export const BarWrapper = styled.div`
       margin-left:2rem;
       margin-bottom:3rem;
 
-      @media ${device.laptopL} { 
-         max-width: 1400px;
-         }
-     
-      @media ${device.desktop} {
-         max-width: 2500px;
-         }
-      @media ${device.tablet} {
-           max-width: 768px;
-               }
-        @media ${device.mobileL} {
-                   max-width: 425px;
-                   }
-        @media ${device.mobileM} {
-                max-width: 375px;
-                       }
-        @media ${device.mobileS} {
-                max-width: 320px;
-                           }
+      
                                  
       `;
 
 export const CentreWrapper = styled.div`
-     width: 120vw;
-     height: 170vh;
-     display: flex;
-     flex-direction: column;
-     background:#DBE1D4;
+padding: 40px 32px;
+position: relative;
+display: flex;
+flex-direction: column;
+gap: 28px;
 
-     
+@media ${devices.md} {
+   padding: 0px 40px 132px 40px;
+ }
+ @media ${devices.tab} {
+   flex-direction: row;
+ }     
                               
  
    
@@ -129,6 +99,25 @@ justify-content: center;
    line-height:1rem;
    margin-left:15rem;
 }
+
+@media ${devices.md} {
+   & h1 {
+     font-size: 3rem;
+   }
+   & p {
+     font-size: 1.25rem;
+   }
+ }
+
+ @media ${devices.tab} {
+   flex-basis: 56%;
+ }
+
+ @media ${devices.xl} {
+   & h1 {
+     font-size: 5.5rem;
+   }
+ }
 `;
 
 export const ButtonContainer = styled.div`
@@ -136,6 +125,9 @@ export const ButtonContainer = styled.div`
     margin-top:2rem;
     margin-left:16rem;
     
+    @media ${devices.tab} {
+      width: 80%;
+    }
     
 `;
 
@@ -176,6 +168,10 @@ export const ImageContainer = styled.section`
  justify-content: space-around;
  align-items: center;
  margin-top: 25rem;
+
+ @media ${devices.tab} {
+   flex-basis: 44%;
+ }
 `;
 
 export const WelcomeWrapper = styled.div`
