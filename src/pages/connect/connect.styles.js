@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import {device} from "../../utils/device"
+import { devices } from "../../utils/device";
+
 
 export const ConnectParent = styled.div`
     width: 100vw;
@@ -8,6 +9,12 @@ export const ConnectParent = styled.div`
     flex-direction: column;
     background:#fff;
 
+    @media ${devices.md} {
+        padding: 0px 40px 132px 40px;
+      }
+      @media ${devices.tab} {
+        flex-direction: row;
+      }     
      `;
 
 export const ConnectWrapper = styled.div`
@@ -18,25 +25,7 @@ export const ConnectWrapper = styled.div`
     justify-content: center;
     background:#fff;
 
-    @media ${device.laptopL} { 
-        max-width: 1400px;
-        }
-    
-     @media ${device.desktop} {
-        max-width: 2500px;
-        }
-     @media ${device.tablet} {
-          max-width: 768px;
-              }
-    @media ${device.mobileL} {
-                  max-width: 425px;
-                  }
-       @media ${device.mobileM} {
-               max-width: 375px;
-                      }
-       @media ${device.mobileS} {
-               max-width: 320px;
-                          }
+   
                                    
         
 

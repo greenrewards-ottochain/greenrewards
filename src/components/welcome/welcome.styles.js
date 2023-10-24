@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { devices } from "../../utils/device";
 
 
 export const WelcomeParent = styled.div`
@@ -7,6 +8,15 @@ export const WelcomeParent = styled.div`
     display: flex;
     flex-direction: column;
     background:#fff;
+
+    @media ${devices.md} {
+      padding: 0px 40px 132px 40px;
+    }
+    @media ${devices.tab} {
+      flex-direction: row;
+    }     
+
+    
 
      `;
 

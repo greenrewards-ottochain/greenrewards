@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
-import { device } from '../../utils/device';
+import { devices } from '../../utils/device';
 
 export const SidebarParent = styled.aside`
   width: 20%;
@@ -12,7 +12,7 @@ export const SidebarParent = styled.aside`
   flex-direction: column;
   }
 
-  @media ${device.laptop} {
+  @media ${devices.lg} {
     width: 10rem;
     height: 100%;
     background: #DBECDB;
@@ -63,7 +63,7 @@ export const SidebarLogoContainer = styled.div`
 
   
 
-  @media ${device.laptop} {
+  @media ${devices.lg} {
     text-decoration: none;
     display: flex;
     width: 90%;
@@ -115,7 +115,7 @@ export const LogoutArea = styled.div`
 
     
 
-  @media ${device.laptop} {
+  @media ${devices.lg} {
     margin-bottom: 1rem;
     padding: 1rem 1rem;
 
