@@ -17,11 +17,11 @@ export const SellerWrapper = styled.div`
 
 
 export const UpperContainer = styled.section`
-  width: 95%;
+  width: 97%;
   height: 40vh;
   display: flex;
   border-radius: 12px;
-  margin-top: 3rem;
+  margin-top: 1rem;
   margin-left:1rem;
 
  
