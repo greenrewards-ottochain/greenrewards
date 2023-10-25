@@ -72,7 +72,7 @@ export const SummaryCard = styled.div`
       
       & p {
         font-weight: 400;
-        font-size: 1rem;
+        font-size: 0.8rem;
         line-height: 1.3rem;
         color: #0F160F;
         margin-left:1rem;

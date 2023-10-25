@@ -19,7 +19,7 @@ import mail from "../../assets/mail.png";
 
 const Subfooter = () => {
     return (
-
+<div className='flex flex-col gap-10 tab:flex-row tab:justify-between tab:gap-40'>
         <SubfooterParent>
             <SubcenterWrapper>
 
@@ -56,6 +56,7 @@ const Subfooter = () => {
                 </OthersContainer>
             </SubcenterWrapper>
         </SubfooterParent>
+        </div>
     )
 
 

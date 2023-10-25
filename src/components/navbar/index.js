@@ -1,14 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "../../assets/logo.png";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import user from "../../assets/user.png";
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { Fragment } from 'react'
-import { Menu, Transition } from '@headlessui/react'
+import { Menu, Transition } from '@headlessui/react';
+import { AiOutlineClose } from 'react-icons/ai';
+import menu from "../../assets/menu.svg";
+
 
 
 const Navbar = () => {
+    const [showMobileNav, setShowMobileNav] = useState(false);
 
+    const handleMobileMenu = () => {
+        setShowMobileNav((o) => !o);
+    };
 
     return (
         <nav class="bg-[#DBE1D4]">
@@ -64,7 +71,7 @@ const Navbar = () => {
                                     <Menu.Item>
                                         <l1>
                                             <Link
-                                            to='/dashboard'
+                                                to='/dashboard'
 
                                             >
                                                 Dashboard
@@ -81,7 +88,80 @@ const Navbar = () => {
 
 
                 <ConnectButton />
+                {/* Mobile Hamburger Menu */}
+                <div className='tab:hidden'>
+                    <button onClick={handleMobileMenu}>
+                        <img src={menu} alt='menu' />
+                    </button>
+                </div>
             </div>
+
+            {/* Mobile Menu */}
+            {showMobileNav && (
+                <div className='py-9 px-11 tab:hidden fixed bg-[#150E28] w-full min-h-screen top-0 z-50'>
+                    <div
+                        className='flex justify-end mb-14'
+                        onClick={() => setShowMobileNav(false)}
+                    >
+                        <AiOutlineClose
+                            size={23}
+                            className='border rounded-full border-purple-50 px-1'
+                        />
+                    </div>
+                    <nav>
+                        <ul className='flex flex-col gap-6 sm:gap-8 text-lg'>
+                            <li>
+                                <NavLink
+                                    href='/'
+                                    onClick={handleMobileMenu}
+                                    className='cursor-pointer'
+                                >
+                                    Home
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink
+                                    href='/market-place'
+                                    onClick={handleMobileMenu}
+                                    className='cursor-pointer'
+                                >
+                                    Marketplace
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink
+                                    href='/about-us'
+                                    onClick={handleMobileMenu}
+                                    className='cursor-pointer'
+                                >
+                                    About us
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink
+                                    to='/sign-up'
+                                    onClick={handleMobileMenu}
+                                    className='cursor-pointer'
+                                >
+                                    Sign up
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink
+                                    to='/sign-in'
+                                    onClick={handleMobileMenu}
+                                    className='cursor-pointer'
+                                >
+                                    Sign in
+                                </NavLink>
+                            </li>
+                        </ul>
+                    </nav>
+                    
+                </div>
+            )}
+
+
         </nav>
     );
 };
