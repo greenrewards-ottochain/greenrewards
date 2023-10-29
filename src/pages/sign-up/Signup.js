@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
     SignupParent,
     SignupWrapper,
@@ -11,9 +11,8 @@ import FormTextInput from "../../components/custom-input/FormTextInput";
 import arrow from "../../assets/arrow.png";
 import Checkbox from "../../components/checkbox/Checkbox";
 import { CloseButton } from '@chakra-ui/react';
-import SuccessPage from "../../components/success/SuccessPage";
-import { Navigate } from "react-router-dom";
-import axios from 'axios';
+import { useContractWrite, usePrepareContractWrite } from 'wagmi';
+import greenRewardABI from "../../contract/greenRewardABI.json";
 
 
 
@@ -26,128 +25,77 @@ const Signup = () => {
     const onChange = () => {
         setChecked(!checked);
     };
-
-    const [formData, setFormData] = useState({
-        name: "",
-        emailAddress: "",
-        password: ""
-    });
-
-    const [isLoading, setIsLoading] = useState(false);
-    const [isLoginSuccess, setIsLoginSuccess] = useState(false);
-    const [isRedirecting, setIsRedirecting] = useState(false); // New state to track redirecting
-
-    useEffect(() => {
-        if (isLoginSuccess) {
-            const redirectTimer = setTimeout(() => {
-                setIsRedirecting(true); // Start redirecting after 2.5 seconds
-            }, 3000);
-
-            return () => clearTimeout(redirectTimer);
-        }
-    }, [isLoginSuccess]);
-
-    ;
-
-    const handleSubmit = async (event) => {
-        event.preventDefault();
-        setIsLoading(true);
-        try {
-            const response = await axios.post(
-                "https://greenrewards-ottochain.onrender.com/users/signUp",
-                formData
-              );
-
-            if (response.status === 200) {
-                console.log("Registration successful");
-                setIsLoginSuccess(true);
-                setIsLoading(false);
-            } else {
-                console.error("Registration failed");
-                setIsLoading(false);
-            }
-        } catch (error) {
-            console.log(error);
-            setIsLoading(false);
-        }
-    };
-
-    const handleChange = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
-    };
+    const { config } = usePrepareContractWrite({
+        address: '0x25d3195984A693886103312eA3FA53D738c951B7',
+        abi: greenRewardABI,
+        functionName: 'createProfile',
+    })
+    const { data, isLoading, isSuccess, write } = useContractWrite(config)
 
 
 
 
     return (
-        <>
-            {isRedirecting ? ( // Conditional rendering for redirecting
-                <Navigate to="/verify-account" /> // Replace with the actual home page route
-            ) : isLoginSuccess ? (
-                <SuccessPage text="Registration Successful" /> // Replace with the actual successPage component
-            ) : (
-                <SignupParent>
-                    <SignupWrapper>
-                        <Wrapper>
 
-                            <form onSubmit={handleSubmit} >
-                                <Link to='/'>  <CloseButton /></Link>
-                                <FormHeader>
-                                    <h3>CREATE YOUR ACCOUNT</h3>
+        <SignupParent>
+            <SignupWrapper>
+                <Wrapper>
 
-                                    <img src={arrow} alt="arrow" marginLeft="2rem" />
-                                </FormHeader>
-                                <FormTextInput
-                                    labelName="Name"
-                                    placeholder="e.g Devon Lane"
-                                    name="name"
-                                    value={formData.name}
-                                    onChange={handleChange}
-                                    required
+                    <form  >
+                        <Link to='/'>  <CloseButton /></Link>
+                        <FormHeader>
+                            <h3>CREATE YOUR ACCOUNT</h3>
 
-                                />
-                               
-                                <FormTextInput
-                                    labelName="Email address"
-                                    placeholder="e.g devonlane@gmail.com"
-                                    name="emailAddress"
-                                    value={formData.emailAddress}
-                                    onChange={handleChange}
-                                    required
-                                />
+                            <img src={arrow} alt="arrow" marginLeft="2rem" />
+                        </FormHeader>
+                        <FormTextInput
+                            labelName="Name"
+                            placeholder="e.g Devon Lane"
+                            name="name"
 
-                                <FormTextInput
-                                    labelName="Password"
-                                    placeholder="********"
-                                    name="password"
-                                    value={formData.password}
-                                    onChange={handleChange}
-                                    required
-                                />
+                            required
+
+                        />
+
+                        <FormTextInput
+                            labelName="Email address"
+                            placeholder="e.g devonlane@gmail.com"
+                            name="emailAddress"
+                            required
+                        />
+
+                        <FormTextInput
+                            labelName="Password"
+                            placeholder="********"
+                            name="password"
+                            required
+                        />
 
 
 
 
-                                <Checkbox
-                                    id="checkbox"
-                                    label="By signing up you accept GreenReward’s Terms of Service and Privacy Policy."
-                                    value={checked}
-                                    onChange={onChange}
-                                    fontSize='0.5rem'
-                                />
+                        <Checkbox
+                            id="checkbox"
+                            label="By signing up you accept GreenReward’s Terms of Service and Privacy Policy."
+                            value={checked}
+                            onChange={onChange}
+                            fontSize='0.5rem'
+                        />
 
-                                <button type='submit' className='w-3/4 px-8 py-2 mb-2 font-semibold rounded-lg text-white bg-[#427142]'>{isLoading ? 'Loading...' : 'Sign Up'}</button>
+                        <button type='submit' className='w-3/4 px-8 py-2 mb-2 font-semibold rounded-lg text-white bg-[#427142]'
+                            disabled={!write} onClick={() => write?.()} >Sign Up</button>
+                        {isLoading && <div>Check Wallet</div>}
+                        {isSuccess && <div>Transaction: {JSON.stringify(data)}</div>}
 
-                                <p>Already have an account? <Link to="/sign-in" style={{ textDecoration: 'none', color: '#015C28' }}>Sign in</Link></p>
+                        <p>Already have an account? <Link to="/sign-in" style={{ textDecoration: 'none', color: '#015C28' }}>Sign in</Link></p>
 
-                            </form>
-                            <div style={{ height: '50rem', width: '50rem' }}><img src={signupimage} alt='signupimage' /></div>
+                    </form>
+                    <div style={{ height: '50rem', width: '50rem' }}><img src={signupimage} alt='signupimage' /></div>
 
-                        </Wrapper>
-                    </SignupWrapper>
-                </SignupParent>
-            )}
-        </>
+                </Wrapper>
+            </SignupWrapper>
+        </SignupParent>
+
 
     );
 };

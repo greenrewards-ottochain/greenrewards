@@ -28,7 +28,7 @@ const AllRoutes = () => {
             <Route path="/dashboard" element={<Seller/>} />
             <Route path='/market-place' element={<Marketplace/>} />
             <Route path="/product-details" element={<Productdetail/>}/>
-            <Route path='/connect' element={<Connect/>}/>
+            <Route path='/connect-wallet' element={<Connect/>}/>
             
 
             </Routes>
