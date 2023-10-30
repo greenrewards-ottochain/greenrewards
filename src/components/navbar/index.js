@@ -49,16 +49,8 @@ const Navbar = () => {
                         <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-[#DBE1D4] shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                             <div className="py-1">
                                 <ul>
-                                    <Menu.Item>
-                                        <li>
-                                            <Link
-                                                to='/sign-in'
-                                            >
-                                                Sign in
-                                            </Link>
-                                        </li>
-                                    </Menu.Item>
-                                    <Menu.Item>
+                                    
+                                     <Menu.Item>
                                         <li>
                                             <Link
                                                 to='/sign-up'

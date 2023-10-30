@@ -87,7 +87,7 @@ const Signup = () => {
                         {isLoading && <div>Check Wallet</div>}
                         {isSuccess && <div>Transaction: {JSON.stringify(data)}</div>}
 
-                        <p>Already have an account? <Link to="/sign-in" style={{ textDecoration: 'none', color: '#015C28' }}>Sign in</Link></p>
+                        <p>Already have an account? <Link to="/connect-wallet" style={{ textDecoration: 'none', color: '#015C28' }}>Connect Wallet</Link></p>
 
                     </form>
                     <div style={{ height: '50rem', width: '50rem' }}><img src={signupimage} alt='signupimage' /></div>
