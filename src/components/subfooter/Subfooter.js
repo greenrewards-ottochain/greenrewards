@@ -1,63 +1,61 @@
 import React from "react";
 import {
-    ProductDiv,
-    ResourcesDiv,
-    SubcenterWrapper,
-    ConnectDiv,
-    SubfooterParent,
-    LogoContainer,
-    OthersContainer,
-    CompanyDiv,
-    SocialDiv,
-    GreenDiv
+  ProductDiv,
+  ResourcesDiv,
+  SubcenterWrapper,
+  ConnectDiv,
+  SubfooterParent,
+  LogoContainer,
+  OthersContainer,
+  CompanyDiv,
+  GreenDiv
 } from "./subfooter.styles";
 import whitelogo from "../../assets/whitelogo.png";
-import twitter from "../../assets/twitter.png";
-import discord from "../../assets/discord.png";
-import mail from "../../assets/mail.png";
-
+import { FaTwitter } from "react-icons/fa";
+import { SiDiscord } from "react-icons/si";
+import { HiOutlineMail } from "react-icons/hi";
+import {Link} from "react-router-dom";
 
 const Subfooter = () => {
-    return (
-<div className='flex flex-col gap-10 tab:flex-row tab:justify-between tab:gap-40'>
-        <SubfooterParent>
-            <SubcenterWrapper>
+  return (
+    <div className='bg-[#2A382A] flex flex-col gap-10 tab:flex-row tab:justify-between tab:gap-40'>
+     <SubfooterParent>
+      <SubcenterWrapper>
+        <OthersContainer>
+      <GreenDiv>
+              <h1>© 2023 Greenreward</h1>
+              </GreenDiv>
+            <ProductDiv>
+              <Link style={{ textDecoration: 'none', color: 'white' }}><h1>Privacy Policy</h1></Link>
 
-                <OthersContainer>
-                    <GreenDiv>
-               <h1>© 2023 Greenreward</h1> 
-               </GreenDiv>
-                    <ProductDiv>
-                        <h1>Privacy Policy</h1>
-                        
-                    </ProductDiv>
-                    <CompanyDiv>
-                        <h1>Term of Use</h1>
-                        
-                    </CompanyDiv>
-                    <ResourcesDiv>
-                        <h1>Contact Us</h1>
-                        
+            </ProductDiv>
+            <CompanyDiv>
+             <Link style={{ textDecoration: 'none', color: 'white' }}> <h1>Term of Use</h1> </Link>
 
-                    </ResourcesDiv>
-                    <ConnectDiv>
-                        <LogoContainer>
-                            <img src={whitelogo} alt="whitelogo" width={50} />
-                        </LogoContainer>
-                        <h6>Where environmental consciousness
-                            <br></br>meets blockchain innovation</h6>
-                        <SocialDiv>
-                            <img src={twitter} alt="twitter" />
-                            <img src={discord} alt="discord" />
-                            <img src={mail} alt="mail" />
-                        </SocialDiv>
+            </CompanyDiv>
+            <ResourcesDiv>
+             <Link  style={{ textDecoration: 'none', color: 'white' }}> <h1>Contact Us</h1></Link>
 
-                    </ConnectDiv>
-                </OthersContainer>
-            </SubcenterWrapper>
-        </SubfooterParent>
-        </div>
-    )
+
+            </ResourcesDiv>
+            <ConnectDiv>
+              <LogoContainer>
+               <Link to='/' style={{ textDecoration: 'none', color: 'white' }}> <img src={whitelogo} alt="whitelogo" width={50} /></Link>
+              </LogoContainer>
+              <h6>Where environmental consciousness
+                <br></br>meets blockchain innovation</h6>
+              <div className="flex flex-row cursor-pointer space-x-5 text-white">
+                <FaTwitter />
+                <SiDiscord />
+                <HiOutlineMail />
+              </div>
+
+            </ConnectDiv>
+            </OthersContainer>
+          </SubcenterWrapper>
+      </SubfooterParent>
+    </div>
+  )
 
 
 

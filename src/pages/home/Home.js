@@ -62,7 +62,7 @@ const Home = () => {
                                         <How />
 
                                 </div>
-                                <div >
+                                <div>
                                         <Footer />
 
                                 </div>
