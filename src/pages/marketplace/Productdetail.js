@@ -10,8 +10,8 @@ import {
 } from "./marketplace.styles";
 import React from 'react';
 import plastic2 from "../../assets/plastic2.svg";
-import Navbar from "../../components/navbar/Navbar";
-import Subfooter from "../../components/subfooter/Subfooter";
+import Navbar from "../../components/navbar/index";
+import Subfooter from "../../components/subfooter/index";
 import { Link } from "react-router-dom";
 
 
