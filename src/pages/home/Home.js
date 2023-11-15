@@ -3,11 +3,11 @@ import Navbar from "../../components/navbar/index";
 import ornament from "../../assets/ornament.png";
 import middleimage1 from "../../assets/middleimage1.png";
 import middleimage2 from "../../assets/middleimage2.png";
-import Welcome from "../../components/welcome/Welcome";
-import How from "../../components/how/How";
-import Recycle from "../../components/recycle/Recycle";
-import Footer from "../../components/footer/Footer";
-import Subfooter from "../../components/subfooter/Subfooter";
+import Welcome from "../../components/welcome/index";
+import How from "../../components/how/index";
+import Recycle from "../../components/recycle/index";
+import Footer from "../../components/footer/index";
+import Subfooter from "../../components/subfooter/index";
 import { Link } from "react-router-dom";
 
 
