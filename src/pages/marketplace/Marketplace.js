@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState,  useEffect } from "react";
 import plastic from "../../assets/plastic.png";
 import electronic from "../../assets/electronic.png";
 import cardboard from "../../assets/cardboard.png";
@@ -9,10 +9,22 @@ import paper from "../../assets/paper.png";
 import Subfooter from "../../components/subfooter/index";
 import { Link } from "react-router-dom";
 
+import { getProducts } from '../../components/contracts/calls';
+
 
 const Marketplace = () => {
 
+    const fetchProducts = async () => {
+        const products = await getProducts();
+        console.log(products);
+      };
 
+
+
+    useEffect(() => {
+        fetchProducts();
+      }, []);
+    
     return (
         <main className='bg-[#DBE1D4] h-screen'>
             <div className="mx-8 pt-16 mb-4">

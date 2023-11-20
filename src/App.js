@@ -1,12 +1,12 @@
 import AllRoutes from './config/AllRoutes';
 import '@rainbow-me/rainbowkit/styles.css';
-import { Chain, darkTheme, getDefaultWallets, RainbowKitProvider } from '@rainbow-me/rainbowkit';
+import { darkTheme, getDefaultWallets, RainbowKitProvider } from '@rainbow-me/rainbowkit';
 import { configureChains, createConfig, WagmiConfig } from 'wagmi';
 import { polygon } from 'wagmi/chains';
 import { publicProvider } from 'wagmi/providers/public';
 
 const ottochain = {
-  id: 0x128, // You can assign a unique identifier as needed
+  id: 0x238c, // You can assign a unique identifier as needed
   name: "Otto Chain",
   network: "otto", 
   iconUrl: "https://example.com/icon.svg", // Update the icon URL if necessary

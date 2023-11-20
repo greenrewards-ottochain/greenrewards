@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,  useEffect } from "react";
 import {
     SignupParent,
     SignupWrapper,
@@ -11,8 +11,7 @@ import FormTextInput from "../../components/custom-input/FormTextInput";
 import arrow from "../../assets/arrow.png";
 import Checkbox from "../../components/checkbox/Checkbox";
 import { CloseButton } from '@chakra-ui/react';
-import { useContractWrite, usePrepareContractWrite } from 'wagmi';
-import greenRewardABI from "../../contract/greenRewardABI.json";
+import { addProfile, getSeller } from "../../components/contracts/calls";
 
 
 
@@ -22,26 +21,35 @@ import greenRewardABI from "../../contract/greenRewardABI.json";
 
 const Signup = () => {
     const [checked, setChecked] = useState(false);
+    const [isProfile, setIsProfile] = useState(false);
     const onChange = () => {
         setChecked(!checked);
     };
-    const { config } = usePrepareContractWrite({
-        address: '0x25d3195984A693886103312eA3FA53D738c951B7',
-        abi: greenRewardABI,
-        functionName: 'createProfile',
-    })
-    const { data, isLoading, isSuccess, write } = useContractWrite(config)
+    const createProfile = async () => {
+        await addProfile('Toheeb', 'Lagos, Nigeria', 'aladetoheeb5@gmail.com');
+
+    }
+
+    const fetchProfile = async () => {
+        const profile = await getSeller('0x96029cf65026cB7F151271DCc9966eF5730AbCe0');
+        console.log(profile)
+        if(profile) {
+            setIsProfile(true);
+        }
+      };
 
 
 
-
+    useEffect(() => {
+        fetchProfile();
+      }, []);
     return (
 
         <SignupParent>
             <SignupWrapper>
                 <Wrapper>
 
-                    <form  >
+                    <form >
                         <Link to='/'>  <CloseButton /></Link>
                         <FormHeader>
                             <h3>CREATE YOUR ACCOUNT</h3>
@@ -83,9 +91,7 @@ const Signup = () => {
                         />
 
                         <button type='submit' className='w-3/4 px-8 py-2 mb-2 font-semibold rounded-lg text-white bg-[#427142]'
-                            disabled={!write} onClick={() => write?.()} >Sign Up</button>
-                        {isLoading && <div>Check Wallet</div>}
-                        {isSuccess && <div>Transaction: {JSON.stringify(data)}</div>}
+                         onClick={() => createProfile()} >Sign Up</button>
 
                         <p>Already have an account? <Link to="/connect-wallet" style={{ textDecoration: 'none', color: '#015C28' }}>Connect Wallet</Link></p>
 
@@ -94,8 +100,10 @@ const Signup = () => {
 
                 </Wrapper>
             </SignupWrapper>
+            <button type='submit' className='w-3/4 px-8 py-2 mb-2 font-semibold rounded-lg text-white bg-[#427142]'
+                         onClick={() => createProfile()} >Sign Up</button>
         </SignupParent>
-
+    
 
     );
 };
