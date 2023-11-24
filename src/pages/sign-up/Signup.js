@@ -1,13 +1,6 @@
-import React, { useState,  useEffect } from "react";
-import {
-    SignupParent,
-    SignupWrapper,
-    Wrapper,
-    FormHeader
-} from "./signup.styles";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import signupimage from "../../assets/signupimage.svg";
-import FormTextInput from "../../components/custom-input/FormTextInput";
 import arrow from "../../assets/arrow.png";
 import Checkbox from "../../components/checkbox/Checkbox";
 import { CloseButton } from '@chakra-ui/react';
@@ -33,55 +26,45 @@ const Signup = () => {
     const fetchProfile = async () => {
         const profile = await getSeller('0x96029cf65026cB7F151271DCc9966eF5730AbCe0');
         console.log(profile)
-        if(profile) {
+        if (profile) {
             setIsProfile(true);
         }
-      };
+    };
 
 
 
     useEffect(() => {
         fetchProfile();
-      }, []);
+    }, []);
     return (
+        <main className="w-screen">
+            <div class='grid grid-cols-1 md:flex md:flex-row gap-2'>
+                <div class='mt-20 mx-20'>
+                    <Link to='/'>  <CloseButton /></Link>
+                    <h1 className="text-[30px] md:text-[34px] font-bold capitalize  text-[#0F160F] mx-10 ">
+                        CREATE YOUR ACCOUNT{" "}
+                    </h1>
+                    <img src={arrow} alt="arrow" class='mx-44' />
+                    <form class='mt-4'>
 
-        <SignupParent>
-            <SignupWrapper>
-                <Wrapper>
-
-                    <form >
-                        <Link to='/'>  <CloseButton /></Link>
-                        <FormHeader>
-                            <h3>CREATE YOUR ACCOUNT</h3>
-
-                            <img src={arrow} alt="arrow" marginLeft="2rem" />
-                        </FormHeader>
-                        <FormTextInput
-                            labelName="Name"
-                            placeholder="e.g Devon Lane"
-                            name="name"
-
-                            required
-
-                        />
-
-                        <FormTextInput
-                            labelName="Email address"
-                            placeholder="e.g devonlane@gmail.com"
-                            name="emailAddress"
-                            required
-                        />
-
-                        <FormTextInput
-                            labelName="Password"
-                            placeholder="********"
-                            name="password"
-                            required
-                        />
-
-
-
-
+                        <div class="mb-1">
+                            <label class="block text-[#0F160F] text-sm font-bold mb-2" for="username">
+                                Name
+                            </label>
+                            <input class="bg-white border-[#0F160F] border-2 rounded w-full py-2 px-3 text-[#0F160F] leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="e.g Devon Lane" required></input>
+                        </div>
+                        <div class="mb-1">
+                            <label class="block text-[#0F160F] text-sm font-bold mb-2" for="emailaddress">
+                                Email address
+                            </label>
+                            <input class="bg-white border-[#0F160F] border-2 rounded w-full py-2 px-3 text-[#0F160F] leading-tight focus:outline-none focus:shadow-outline" id="emailaddress" type="email" placeholder="e.g devonlane@gmail.com" required></input>
+                        </div>
+                        <div class="mb-1">
+                            <label class="block text-[#0F160F] text-sm font-bold mb-2" for="password">
+                                Password
+                            </label>
+                            <input class="bg-white border-[#0F160F] border-2 rounded w-full py-2 px-3 text-[#0F160F] leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="********" required></input>
+                        </div>
                         <Checkbox
                             id="checkbox"
                             label="By signing up you accept GreenReward’s Terms of Service and Privacy Policy."
@@ -90,21 +73,20 @@ const Signup = () => {
                             fontSize='0.5rem'
                         />
 
-                        <button type='submit' className='w-3/4 px-8 py-2 mb-2 font-semibold rounded-lg text-white bg-[#427142]'
-                         onClick={() => createProfile()} >Sign Up</button>
+                        <button type='submit' className='w-full px-8 py-2 mb-2 font-semibold rounded-lg text-white bg-[#427142]'
+                            onClick={() => createProfile()} >Sign Up</button>
 
                         <p>Already have an account? <Link to="/connect-wallet" style={{ textDecoration: 'none', color: '#015C28' }}>Connect Wallet</Link></p>
 
                     </form>
-                    <div style={{ height: '50rem', width: '50rem' }}><img src={signupimage} alt='signupimage' /></div>
+                </div>
+                <div class='h-screen' ><img src={signupimage} alt='signupimage' /></div>
 
-                </Wrapper>
-            </SignupWrapper>
-            <button type='submit' className='w-3/4 px-8 py-2 mb-2 font-semibold rounded-lg text-white bg-[#427142]'
-                         onClick={() => createProfile()} >Sign Up</button>
-        </SignupParent>
-    
 
+
+
+            </div>
+        </main>
     );
 };
 

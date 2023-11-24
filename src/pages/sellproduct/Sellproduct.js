@@ -1,15 +1,6 @@
 import React, { useState } from "react";
-import {
-    SellParent,
-    SellWrapper,
-    Wrapper,
-    FormHeader,
-    Select
-} from "./sellproduct.styles";
 import sideimage from "../../assets/sideimage.svg";
-import FormTextInput from "../../components/custom-input/FormTextInput";
 import arrow from "../../assets/arrow.png";
-import FormButton from "../../components/custom-button/FormButton";
 import Checkbox from "../../components/checkbox/Checkbox";
 import { VscArrowLeft } from "react-icons/vsc";
 import { Link } from "react-router-dom";
@@ -37,62 +28,66 @@ const SellProduct = () => {
 
 
     return (
-        <SellParent>
-            <SellWrapper>
-                <Wrapper>
+        <main className="w-screen">
+            <div class='grid grid-cols-1 md:flex md:flex-row gap-2'>
+                <div class='mt-32 mx-40'>
                     <Link to='/' style={{ marginTop: '1rem' }}><VscArrowLeft /></Link>
-                    <form>
-                        <FormHeader>
+                    <h1 className="text-[30px] md:text-[34px] font-bold text-[#0F160F] mx-10">
+                        Add a product{" "}
+                    </h1>
+                    <img src={arrow} alt="arrow" class='mx-32' />
 
-                            <h3>Add a product</h3>
-                            <img src={arrow} alt="arrow" marginLeft="2rem" />
-                        </FormHeader>
-                        <FormTextInput
-                            labelName="Type of recyclable material"
-                            placeholder="E.g Plastic Bottles Collection"
-                            name="bottlecollection"
+                    <form class='mt-4'>
+                        <div class="mb-1">
+                            <label class="block text-[#0F160F] text-sm font-bold mb-2" for="bottlecollection">
+                                Type of recyclable material
+                            </label>
+                            <input class="bg-white border-[#0F160F] border-2 rounded w-full py-2 px-3 text-[#0F160F] leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="E.g Plastic Bottles Collection" required></input>
+                        </div>
+                        <div class="mb-1">
+                            <label class="block text-[#0F160F] text-sm font-bold mb-2" for="quantity">
+                                Quantity of recyclable product (in unit of measure)
+                            </label>
+                            <div class="relative">
+                                <select class="block appearance-none w-full h-10 bg-white border-[#0F160F] border-2 text-[#0F160F] rounded leading-tight focus:outline-none focus:bg-white focus:shadow-outline" id="quantity">
+                                    <option>Click on the arrow to select an option</option>
+                                    <option>Grams</option>
+                                    <option>Kilograms</option>
+                                    <option>Tons</option>
+                                    <option>Liters</option>
+                                    <option>Cans</option>
+                                    <option>Pounds</option>
+                                    <option>Gallons </option>
+                                    <option>Pieces</option>
+                                    <option>Boxes</option>
+                                </select>
+                                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                                    <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" /></svg>
+                                </div>
+                            </div>
 
-                        />
-                        <Select>
-                            <option value="" hidden>Quantity of recyclabe product (in unit of measure) </option>
-                            <option value="1">Grams</option>
-                            <option value="2">Kilograms</option>
-                            <option value="3">Tons</option>
-                            <option value="4">Liters</option>
-                            <option value="5">Cans</option>
-                            <option value="6">Pounds</option>
-                            <option value="7">Gallons </option>
-                            <option value="8">Pieces</option>
-                            <option value="9">Boxes</option>
-                        </Select>
-                        <br></br>
-                        <FormTextInput
-                            labelName="Volume of the recyclable product"
-                            placeholder="Type the volume of the recyclable product"
-                            name="recyclableproduct"
-
-                        />
-                        <FormTextInput
-                            labelName="Price of the recyclable material (Price per unit of measure)"
-                            placeholder="E.g 1 plastic bottle cost  2 $OTTO"
-                            name="cost"
-
-                        />
-
-
-                        <FormTextInput
-                            labelName="Location"
-                            placeholder="E.g Lagos"
-                            name="location"
-
-                        />
-
-
-
-
-<label class="text-sm font-medium text-black block mb-2" for="user_avatar">Add a picture of the recyclable material </label>
-<input class="block w-3/4 cursor-pointer bg-white border-black border-solid border-2  text-black focus:outline-none focus:border-black  text-sm rounded-lg" aria-describedby="file_upload" id="file_upload" type="file"/>
-<div class="mt-1 text-sm text-black" id="file">Drag and drop or Select file from computer</div>
+                        </div>
+                        <div class="mb-1">
+                            <label class="block text-[#0F160F] text-sm font-bold mb-2" for="recyclableproduct">
+                                Volume of the recyclable product
+                            </label>
+                            <input class="bg-white border-[#0F160F] border-2 rounded w-full py-2 px-3 text-[#0F160F] leading-tight focus:outline-none focus:shadow-outline" id="recyclableproduct" type="text" placeholder="Type the volume of the recyclable product" required></input>
+                        </div>
+                        <div class="mb-1">
+                            <label class="block text-[#0F160F] text-sm font-bold mb-2" for="cost">
+                                Price of the recyclable material (Price per unit of measure)
+                            </label>
+                            <input class="bg-white border-[#0F160F] border-2 rounded w-full py-2 px-3 text-[#0F160F] leading-tight focus:outline-none focus:shadow-outline" id="cost" type="cost" placeholder="E.g 1 plastic bottle cost  2 $OTTO" required></input>
+                        </div>
+                        <div class="mb-1">
+                            <label class="block text-[#0F160F] text-sm font-bold mb-2" for="location">
+                                Location
+                            </label>
+                            <input class="bg-white border-[#0F160F] border-2 rounded w-full py-2 px-3 text-[#0F160F] leading-tight focus:outline-none focus:shadow-outline" id="location" type="location" placeholder="E.g Lagos" required></input>
+                        </div>
+                        <label class="text-sm font-medium text-black block mb-2" for="user_avatar">Add a picture of the recyclable material </label>
+                        <input class="block w-full cursor-pointer bg-white border-black border-solid border-2  text-black focus:outline-none focus:border-black  text-sm rounded-lg" aria-describedby="file_upload" id="file_upload" type="file" />
+                        <div class="mt-1 text-sm text-black" id="file">Drag and drop or Select file from computer</div>
 
                         <Checkbox
                             id="checkbox"
@@ -101,32 +96,21 @@ const SellProduct = () => {
                             onChange={onChange}
                             fontSize='0.5rem'
                         />
-                        <FormButton
-                            text="Proceed to Confirm"
-                            color="#fff"
-                            borderColor="#2B452B"
-                            disabled={!write} onClick={() => write?.()}       
 
-                        />
+                        <button type='submit' className='w-full px-8 py-2 mb-2 font-semibold rounded-lg text-white bg-[#427142] border-[#2B452B]'
+                            onClick={() => write?.()} >Proceed to Confirm</button>
+                        
                         {isLoading && <div>Check Wallet</div>}
                         {isSuccess && <div>Transaction: {JSON.stringify(data)}</div>}
-                        <FormButton
-                            text="Cancel"
-                            color="#2B452B"
-                            borderColor="#2B452B"
-                            backgroundColor='#fff'
-
-                        />
-
-
-
+                        <button type='submit' className='w-full px-8 py-2 mb-2 font-semibold rounded-lg text-[#2B452B] bg-white border-[#2B452B] border-2'>Cancel</button>
+                        
                     </form>
-                    <div style={{ height: '50rem', width: '45rem', marginRight: '2rem' }}><img src={sideimage} alt='sideimage' /></div>
+                </div>
+                <div><img src={sideimage} alt='sideimage' /></div>
 
-                </Wrapper>
-            </SellWrapper>
-        </SellParent>
 
+            </div>
+        </main>
     );
 };
 
