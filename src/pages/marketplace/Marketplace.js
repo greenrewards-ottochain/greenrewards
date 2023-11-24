@@ -1,4 +1,4 @@
-import React, { useState,  useEffect } from "react";
+import React, { useEffect } from "react";
 import plastic from "../../assets/plastic.png";
 import electronic from "../../assets/electronic.png";
 import cardboard from "../../assets/cardboard.png";
@@ -8,7 +8,6 @@ import bottle from "../../assets/bottle.png";
 import paper from "../../assets/paper.png";
 import Subfooter from "../../components/subfooter/index";
 import { Link } from "react-router-dom";
-
 import { getProducts } from '../../components/contracts/calls';
 
 

@@ -19,7 +19,7 @@ import { Link } from "react-router-dom";
 
 const Home = () => {
 
-       
+
 
 
         return (
@@ -28,28 +28,25 @@ const Home = () => {
                         <div className="mx-8 pt-16">
                                 <Navbar />
                         </div>
-                        <section className='w-[100vw] md:w-[100%]'>
-                                <h1 className='text-[30px] md:text-[34px] font-bold capitalize  text-[#0F160F] mx-80 mt-10' >Empower climate change and sustainable </h1>
-                                <h2 className='text-[30px] md:text-[32px] font-bold capitalize text-[#0F160F]  mx-96'>carbon reduction through recycling.</h2>
-                                <h3 className='text-[18px] md:text-[16px] text-[#0F160F]  mx-96 px-4'>Trade recyclables on the blockchain, earn rewards, and power the green</h3>
-                                <h4 className='text-[18px] md:text-[16px] text-[#0F160F]  mx-96 px-20'>revolution with every sale and purchase</h4>
-                                <div className="flex-justify-item-centre mt-4 mx-96 px-36">
-                                        <Link to='/connect-wallet' style={{ textDecoration: 'none', color: 'white' }}>  <button class="bg-[#427142] hover:bg-[#DBE1D4] text-white font-bold py-2 px-4  rounded">
-                                                Sell Product    </button></Link>
-                                        <Link to='/connect-wallet' style={{ textDecoration: 'none', color: '#427142' }}>  <button class="bg-[#DBE1D4] hover:bg-[#427142] text-[#427142] font-bold py-2 px-4 border border-[#427142] rounded">
-                                                Buy Products    </button></Link>
-                                </div>
+                        <section className='w-[100vw] md:w-[100%]   h-[100vh]'>
+                                <div className='w-100 md:w-[100%] lg:p-16 p-4  grid lg:grid-cols-2 h-[100vh] lg:gap-0 gap-4'>
+                                        <div className="flex flex-col gap-4">
+                                                <h1 className='text-[30px] md:text-[34px] font-bold capitalize  text-[#0F160F]' >Empower climate change and sustainable carbon reduction through recycling.</h1>
+                                                <h3 className='text-[18px] md:text-[16px] text-[#0F160F]  '>Trade recyclables on the blockchain, earn rewards, and power the green revolution with every sale and purchase</h3>
+                                                <div className="flex item-centre gap-8 ">
+                                                        <Link to='/sell-product' style={{ textDecoration: 'none', color: 'white' }}>  <button class="bg-[#427142] hover:bg-[#DBE1D4] text-white font-bold py-2 px-4  rounded">
+                                                                Sell Product    </button></Link>
+                                                        <Link to='/connect-wallet' style={{ textDecoration: 'none', color: '#427142' }}>  <button class="bg-[#DBE1D4] hover:bg-[#427142] text-[#427142] font-bold py-2 px-4 border border-[#427142] rounded">
+                                                                Buy Products    </button></Link>
+                                                </div>
 
-
-
-
-
-
-                                <div className='bg-[#DBE1D4] grid-cols-4 gap-4" md:flex md:flex-row'>
-                                      <div className="mx-20 mt-48"> <img src={ornament} alt='ornament' /></div>
-                                        <div className="mt-28 mx-12"><img src={middleimage1} alt="middleimage1" /></div>
-                                       <div className="mt-10 mb-4"> <img src={middleimage2} alt="middleimage2" /></div>
-                                        <div className="mx-20 mt-48"><img src={ornament} alt='ornament' /></div>
+                                        </div>
+                                        <div className="grid grid-cols-2 gap-0 h-max">
+                                                <div className="h-[100px] w-[100px] "> <img src={ornament} alt='ornament' /></div>
+                                                <div className="h-[200px] w-[200px]"><img src={middleimage1} alt="middleimage1" /></div>
+                                                <div className="h-[200px] w-[200px] lg:block hidden"> <img src={middleimage2} alt="middleimage2" /></div>
+                                                <div className="h-[100px] w-[100px] lg:block hidden "><img src={ornament} alt='ornament' /></div>
+                                        </div>
                                 </div>
 
                                 <div>
