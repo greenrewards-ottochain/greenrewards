@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useState} from "react";
 import sideimage from "../../assets/sideimage.svg";
 import arrow from "../../assets/arrow.png";
 import Checkbox from "../../components/checkbox/Checkbox";
 import { VscArrowLeft } from "react-icons/vsc";
 import { Link } from "react-router-dom";
-import { useContractWrite, usePrepareContractWrite } from 'wagmi';
-import greenRewardABI from "../../contract/greenRewardABI.json";
+import { sellProduct } from "../../components/contracts/calls";
+
 
 
 
@@ -15,16 +15,19 @@ import greenRewardABI from "../../contract/greenRewardABI.json";
 
 const SellProduct = () => {
     const [checked, setChecked] = useState(false);
+    
     const onChange = () => {
         setChecked(!checked);
     };
-    const { config } = usePrepareContractWrite({
-        address: '0x25d3195984A693886103312eA3FA53D738c951B7',
-        abi: greenRewardABI,
-        functionName: 'listProduct',
-    })
-    const { data, isLoading, isSuccess, write } = useContractWrite(config)
 
+    const price = 1000;
+    const weight = 130;
+    const listProduct = async () => {
+        await sellProduct("My Bucket", 'some image', "Bucket for displaying tools", price, weight);
+
+    }
+
+    
 
 
     return (
@@ -98,10 +101,9 @@ const SellProduct = () => {
                         />
 
                         <button type='submit' className='w-full px-8 py-2 mb-2 font-semibold rounded-lg text-white bg-[#427142] border-[#2B452B]'
-                            onClick={() => write?.()} >Proceed to Confirm</button>
+                             onClick={() => listProduct()} >Proceed to Confirm</button>
                         
-                        {isLoading && <div>Check Wallet</div>}
-                        {isSuccess && <div>Transaction: {JSON.stringify(data)}</div>}
+                        
                         <button type='submit' className='w-full px-8 py-2 mb-2 font-semibold rounded-lg text-[#2B452B] bg-white border-[#2B452B] border-2'>Cancel</button>
                         
                     </form>

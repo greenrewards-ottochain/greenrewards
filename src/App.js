@@ -47,7 +47,7 @@ const { chains, publicClient, webSocketPublicClient } = configureChains(
 );
 
 const { connectors } = getDefaultWallets({
-  appName: 'RainbowKit App',
+  appName: 'greenreward',
   projectId: 'YOUR_PROJECT_ID',
   chains,
 });
