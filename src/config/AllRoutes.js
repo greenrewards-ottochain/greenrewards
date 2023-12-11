@@ -5,8 +5,7 @@ import Home from "../pages/home/Home";
 import SellProduct from "../pages/sellproduct/Sellproduct";
 import Seller from "../pages/dashboard/Sellers";
 import Marketplace from "../pages/marketplace/Marketplace";
-import Productdetail from "../pages/marketplace/Productdetail";
-import Connect from "../pages/connect/Connect";
+import Productdetail from "../pages/productdetails/Productdetail";
 import Layout from '../layout/Layout';
 
 const AllRoutes = () => {
@@ -24,9 +23,6 @@ const AllRoutes = () => {
             <Route path="/dashboard" element={<Seller/>} />
             <Route path='/market-place' element={<Marketplace/>} />
             <Route path="/product-details" element={<Productdetail/>}/>
-            <Route path='/connect-wallet' element={<Connect/>}/>
-            
-
             </Routes>
           </Layout>
         </BrowserRouter>

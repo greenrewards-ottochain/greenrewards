@@ -36,7 +36,7 @@ const Home = () => {
                                                 <div className="flex item-centre gap-8 ">
                                                         <Link to='/sell-product' style={{ textDecoration: 'none', color: 'white' }}>  <button class="bg-[#427142] hover:bg-[#DBE1D4] text-white font-bold py-2 px-4  rounded">
                                                                 Sell Product    </button></Link>
-                                                        <Link to='/connect-wallet' style={{ textDecoration: 'none', color: '#427142' }}>  <button class="bg-[#DBE1D4] hover:bg-[#427142] text-[#427142] font-bold py-2 px-4 border border-[#427142] rounded">
+                                                        <Link to='/market-place' style={{ textDecoration: 'none', color: '#427142' }}>  <button class="bg-[#DBE1D4] hover:bg-[#427142] text-[#427142] font-bold py-2 px-4 border border-[#427142] rounded">
                                                                 Buy Products    </button></Link>
                                                 </div>
 
