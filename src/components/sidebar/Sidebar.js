@@ -16,9 +16,8 @@ const Sidebar = ({ routes }) => {
 
   const handleLogout = () => {
     localStorage.removeItem("currentUser");
-    localStorage.removeItem("userToken");
-
-    navigate("/sign-in");
+   
+    navigate("/");
   };
 
   return (

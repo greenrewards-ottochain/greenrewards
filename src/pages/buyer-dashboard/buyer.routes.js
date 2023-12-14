@@ -4,6 +4,7 @@ import add from "../../assets/add.png";
 import marketplace from "../../assets/marketplace.png";
 import notification from "../../assets/notification.png";
 import transaction from "../../assets/transaction.png";
+import { CiChat1 } from "react-icons/ci";
 
 export const sideBarLinks = [
   {
@@ -13,13 +14,21 @@ export const sideBarLinks = [
     alt: "home",
   },
   {
-    path: "/seller/dashboard",
+    path: "/buyer/dashboard",
     icon: <img src={dashboard} alt=''/>,
     text: "Dashboard",
     alt: "dashboard",
   },
+
   {
-    path: "/seller/addproduct",
+    path: "/buyer/chat",
+    icon: <CiChat1/>,
+    text: "Chat",
+    alt: "chat",
+  },
+
+  {
+    path: "/buyer/addproduct",
     icon: <img src={add} alt=''/>,
     text: "Add product",
     alt: "add",
@@ -32,13 +41,13 @@ export const sideBarLinks = [
   },
   
   {
-    path: "/seller/notification",
+    path: "/buyer/notification",
     icon: <img src={notification} alt="notification" />,
     text: "Notifications",
     alt: "notification",
   },
   {
-    path: "/seller/transaction",
+    path: "/buyer/transaction",
     icon: <img src={transaction} alt="" />,
     text: "Transactions",
     alt: "transaction",

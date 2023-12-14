@@ -16,14 +16,14 @@ const Marketplace = () => {
     const fetchProducts = async () => {
         const products = await getProducts();
         console.log(products);
-      };
+    };
 
 
 
     useEffect(() => {
         fetchProducts();
-      }, []);
-    
+    }, []);
+
     return (
         <main className='bg-[#DBE1D4] h-screen'>
             <div className="mx-8 pt-16 mb-4">
@@ -49,8 +49,8 @@ const Marketplace = () => {
                                 Price:<span className='mx-28'>2 $OTTO</span>
                             </p>
                             <div>
-                                <button class="bg-white hover:bg-[#427142] text-[#427142] font-bold py-2 px-4 border border-black rounded w-full">
-                                    <Link to='/product-details' style={{ textDecoration: 'none', color: '#427142' }}>  View details  </Link>  </button>
+                            <Link to='/buyerproduct-details' style={{ textDecoration: 'none', color: '#427142' }}><button class="bg-white hover:bg-[#427142] text-[#427142] font-bold py-2 px-4 border border-black rounded w-full">
+                                     View details </button>  </Link>  
                             </div>
                         </div>
                     </div>
