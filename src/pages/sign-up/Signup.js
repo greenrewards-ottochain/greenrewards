@@ -12,6 +12,7 @@ import { addProfile, getSeller } from "../../components/contracts/calls";
 
 
 
+
 const Signup = () => {
     const [checked, setChecked] = useState(false);
     const [isProfile, setIsProfile] = useState(false);
@@ -31,11 +32,12 @@ const Signup = () => {
         }
     };
 
-
-
     useEffect(() => {
         fetchProfile();
     }, []);
+
+
+
     return (
         <main className="w-screen">
             <div class='grid grid-cols-1 md:flex md:flex-row gap-2'>

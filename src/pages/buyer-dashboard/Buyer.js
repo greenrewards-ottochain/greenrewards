@@ -4,13 +4,13 @@ import {
 
     Button,
     LowerContainer,
-    SellerParent,
-    SellerWrapper,
+    BuyerParent,
+    BuyerWrapper,
     TextContainer,
     UpperContainer,
 
-} from "./sellers.styles";
-import { sideBarLinks } from "./sellers.routes";
+} from "./buyer.styles";
+import { sideBarLinks } from "./buyer.routes";
 import upperimage from "../../assets/upperimage.png";
 import { Fragment } from 'react'
 import { Menu, Transition } from '@headlessui/react'
@@ -19,11 +19,12 @@ import { Link } from "react-router-dom";
 
 
 
-const Seller = () => {
+
+const Buyer = () => {
     return (
-        <SellerParent>
+        <BuyerParent>
             <Sidebar routes={sideBarLinks} />
-            <SellerWrapper>
+            <BuyerWrapper>
 
 
                 <div
@@ -40,7 +41,7 @@ const Seller = () => {
                             <br></br>meets blockchain innovation</h1>
                             <h2>Trade recyclables on the blockchain, earn rewards, and power the 
                                 <br></br>green revolution with every sale and purchase</h2>
-                                <Button>Add new Products</Button>
+                               <Link to='/' style={{ textDecoration: 'none', color: '#427142' }}><Button>Go to homepage</Button></Link> 
                                 </TextContainer>
                                 
                     </UpperContainer>
@@ -98,9 +99,9 @@ const Seller = () => {
 
 
                
-            </SellerWrapper>
-        </SellerParent >
+            </BuyerWrapper>
+        </BuyerParent >
     );
 };
 
-export default Seller;
+export default Buyer;

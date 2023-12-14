@@ -59,7 +59,7 @@ export const SidebarLogoContainer = styled.div`
   display: flex;
   color: #000;
   align-items: center;
-  padding: 0.5rem;
+  padding: 1rem;
 
   
 
@@ -69,7 +69,7 @@ export const SidebarLogoContainer = styled.div`
     width: 90%;
     align-items: center;
     color: #000;
-    padding: 0.2rem 0.2rem;
+    padding: 0.5rem o.5rem;
 
     & span {
       margin-left: 2rem;
