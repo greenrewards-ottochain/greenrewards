@@ -2,32 +2,31 @@ import AllRoutes from './config/AllRoutes';
 import '@rainbow-me/rainbowkit/styles.css';
 import { darkTheme, getDefaultWallets, RainbowKitProvider } from '@rainbow-me/rainbowkit';
 import { configureChains, createConfig, WagmiConfig } from 'wagmi';
-import { polygon } from 'wagmi/chains';
 import { publicProvider } from 'wagmi/providers/public';
 
 const ottochain = {
-  id: 0x238c, // You can assign a unique identifier as needed
+  id: 8900, // You can assign a unique identifier as needed
   name: "Otto Chain",
-  network: "otto", 
+  network: "Ottochain", 
   iconUrl: "https://example.com/icon.svg", // Update the icon URL if necessary
   iconBackground: "#fff", // Update icon background color if needed
   nativeCurrency: {
     decimals: 18, 
-    name: "GNC", // Name of the native currency
-    symbol: "GNC", // Symbol for the native currency
+    name: "OTTO", // Name of the native currency
+    symbol: "OTTO", // Symbol for the native currency
   },
   rpcUrls: {
     public: {
-      http: ["https://gateway.testnet.octopus.network/ottochain/m4k5urt9h33dpbhgsp4lqxemo6naeihz"], 
+      http: ["https://gateway.mainnet.octopus.network/eth/otto/andk2nmw198f7on2"], 
     },
     default: {
-      http: ["https://gateway.testnet.octopus.network/ottochain/m4k5urt9h33dpbhgsp4lqxemo6naeihz"], 
+      http: ["https://gateway.mainnet.octopus.network/eth/otto/andk2nmw198f7on2"], 
     },
   },
   blockExplorers: {
     default: {
       name: "OTTO",
-      url: "http://34.69.4.240:4000/", 
+      url: "https://otto.blockscout.mainnet.octopus.network/", 
     },
   },
   contracts: {
@@ -40,7 +39,7 @@ const ottochain = {
 const { chains, publicClient, webSocketPublicClient } = configureChains(
   [
     // mainnet,
-    polygon,
+    
     ottochain
   ],
   [publicProvider()]
