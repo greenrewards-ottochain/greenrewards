@@ -47,7 +47,7 @@ const { chains, publicClient, webSocketPublicClient } = configureChains(
 
 const { connectors } = getDefaultWallets({
   appName: 'greenreward',
-  projectId: 'YOUR_PROJECT_ID',
+  projectId: 'c93725f1910953289f7352e7d221ce4a',
   chains,
 });
 
