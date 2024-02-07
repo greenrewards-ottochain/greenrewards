@@ -2,7 +2,7 @@ import { ethers } from "ethers";
 import abi from "../../contract/greenRewardABI.json";
 
 
-const contractAddr = "0x25d3195984A693886103312eA3FA53D738c951B7";
+const contractAddr = "0x34eC3FEd30D5457394c40da0488aF0d45fB9059d";
 
 const getContract = async () => {
   if (window.ethereum) {
