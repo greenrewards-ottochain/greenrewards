@@ -5,13 +5,17 @@ module.exports = {
     extend: {},
   },
   screens: {
-    'xs': '320px',
-    'sm': '640px',
-    'md': '768px',
-    tablet: '960px',
-    'xl': '1280px',
-    laptop: "1366px",
-    '2xl': '1536px',
+    'xs': {'min' :'320', 'max' : "639"},
+
+    'sm': {'min': '640px', 'max': '767px'},
+    
+    'md': {'min': '768px', 'max': '1023px'},
+  
+    'lg': {'min': '1024px', 'max': '1279px'},
+    
+    'xl': {'min': '1280px', 'max': '1535px'},
+    
+    '2xl': {'min': '1536px'},
     
   },
   plugins: [],

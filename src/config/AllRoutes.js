@@ -1,15 +1,9 @@
-import React from 'react';
+import React, {lazy, Suspense} from 'react';
+import {Toaster} from "react-hot-toast";
+import PageLoader from '../components/Loader/PageLoader';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Signup from "../pages/sign-up/Signup";
-import Home from "../pages/home/Home";
-import SellProduct from "../pages/sellproduct/Sellproduct";
-import Seller from "../pages/seller-dashboard/Sellers";
-import Marketplace from "../pages/marketplace/Marketplace";
-import Productdetail from "../pages/productdetails/Productdetail";
 import Layout from '../layout/Layout';
-import BuyerProductdetail from '../pages/buyerproductdetails/BProductdetail';
-import BuyProduct from "../pages/buyproduct/Buyproduct";
-import Buyer from '../pages/buyer-dashboard/Buyer';
+
 
 const path = {
   index:"/",
@@ -19,11 +13,21 @@ const path = {
 
 
 const AllRoutes = () => {
- 
+  const Home = lazy(() => import("../pages/home/Home"));
+  const Signup = lazy(() => import("../pages/sign-up/Signup"));
+  const SellProduct = lazy(() => import("../pages/sellproduct/Sellproduct"));
+  const Seller = lazy(() => import("../pages/seller-dashboard/Sellers"));
+  const Marketplace = lazy(() => import("../pages/marketplace/Marketplace"));
+  const Productdetail = lazy(() => import("../pages/productdetails/Productdetail"));
+  const BuyerProductdetail = lazy(() => import("../pages/buyerproductdetails/BProductdetail"));
+  const BuyProduct = lazy(() => import("../pages/buyproduct/Buyproduct"));
+  const Buyer = lazy(() => import("../pages/buyer-dashboard/Buyer"));
+  
 
   return (
     <div>
-     
+     <Toaster />
+     <Suspense fallback={<PageLoader />}>
         <BrowserRouter>
           <Layout>
             <Routes>
@@ -39,7 +43,7 @@ const AllRoutes = () => {
             </Routes>
           </Layout>
         </BrowserRouter>
-      
+        </Suspense>
     </div>
   );
 };
