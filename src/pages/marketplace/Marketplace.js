@@ -26,7 +26,7 @@ const Marketplace = () => {
 
     return (
         <main className='bg-[#DBE1D4] h-screen'>
-            <div className="mx-8 pt-16 mb-4">
+            <div className="mx-8 pt-16 mb-4  2xl:mt-4">
                 <Navbar />
             </div>
             <section className='w-[100vw] md:w-[100%]'>
